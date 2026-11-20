@@ -105,7 +105,7 @@ Kullanıcı bir mesajı **kendisi bildirdiğinde** mesajın metni sunucuya gitti
 | Soru | Cevap |
 |---|---|
 | Bu uygulamadan veri topluyor musunuz? | **Evet** |
-| Veri türü | **User Content › Other User Content** (bildirilen mesajın metni) |
+| Veri türü | **User Content › Emails or Text Messages** (bildirilen SMS'in metni) |
 | Kullanıcının kimliğine bağlı mı? | **Hayır** (numara, ad, cihaz kimliği ve IP adresi saklanmaz) |
 | Takip (tracking) için mi? | **Hayır** |
 | Amaç | **App Functionality** (filtrenin yeni bet mesajlarını tanıması) |
