@@ -171,12 +171,12 @@
         }
       }
     },
-    "Every message is checked on your iPhone. Red Card has no servers, no account and no tracking.": {
+    "Every message is checked on your iPhone. Red Card has no account and no tracking.": {
       "localizations": {
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Her mesaj iPhone'unda kontrol edilir. Red Card'ın sunucusu, hesabı ve takibi yoktur."
+            "value": "Her mesaj iPhone'unda kontrol edilir. Red Card'da hesap ve takip yoktur."
           }
         }
       }
@@ -267,6 +267,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bu yolla yüzlerce sohbeti tek seferde seçip silebilirsin."
+          }
+        }
+      }
+    },
+    "In Messages, report the message as junk and choose Red Card. It helps the filter learn new bet messages for everyone.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mesajlar'da mesajı gereksiz olarak bildir ve Red Card'ı seç. Bu, filtrenin yeni bet mesajlarını herkes için öğrenmesine yardım eder."
           }
         }
       }
@@ -387,6 +397,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Rehberindeki kişilerden gelen mesajlar asla kontrol edilmez ve filtrelenmez."
+          }
+        }
+      }
+    },
+    "Missed a bet message?": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaçan bir bet mesajı mı var?"
           }
         }
       }
@@ -537,6 +557,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Delete tuşuna bas. Sohbetler iPhone'undan da silinir."
+          }
+        }
+      }
+    },
+    "Privacy policy": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gizlilik politikası"
           }
         }
       }
@@ -807,6 +837,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Filtrenin internet erişimi yoktur ve hiçbir şey kaydedemez, yani mesajların telefonundan asla çıkmaz."
+          }
+        }
+      }
+    },
+    "The only exception is a message you report yourself from Messages: then its text is sent to Red Card, without your number or the sender's number.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tek istisna, Mesajlar'dan kendin bildirdiğin bir mesajdır: o zaman mesajın metni Red Card'a gönderilir; senin numaran ve gönderenin numarası gönderilmez."
           }
         }
       }

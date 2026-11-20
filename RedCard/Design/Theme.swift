@@ -9,7 +9,7 @@ enum Theme {
 
     /// The red card graphic.
     static let cardAspectRatio: CGFloat = 0.7
-    static let cardCornerFraction: CGFloat = 0.1
+    static let cardCornerFraction: CGFloat = 0.09
     static let cardRestingTilt: Angle = .degrees(-8)
 
     /// Launch splash: where the card starts and how it moves.

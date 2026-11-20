@@ -124,8 +124,14 @@ TR = {
 
     # About
     "Private by design": "Gizlilik en baştan",
-    "Every message is checked on your iPhone. Red Card has no servers, no account and no tracking.":
-        "Her mesaj iPhone'unda kontrol edilir. Red Card'ın sunucusu, hesabı ve takibi yoktur.",
+    "Every message is checked on your iPhone. Red Card has no account and no tracking.":
+        "Her mesaj iPhone'unda kontrol edilir. Red Card'da hesap ve takip yoktur.",
+    "The only exception is a message you report yourself from Messages: then its text is sent to Red Card, without your number or the sender's number.":
+        "Tek istisna, Mesajlar'dan kendin bildirdiğin bir mesajdır: o zaman mesajın metni Red Card'a gönderilir; senin numaran ve gönderenin numarası gönderilmez.",
+    "Privacy policy": "Gizlilik politikası",
+    "Missed a bet message?": "Kaçan bir bet mesajı mı var?",
+    "In Messages, report the message as junk and choose Red Card. It helps the filter learn new bet messages for everyone.":
+        "Mesajlar'da mesajı gereksiz olarak bildir ve Red Card'ı seç. Bu, filtrenin yeni bet mesajlarını herkes için öğrenmesine yardım eder.",
     "The filter has no internet access and can't store anything, so your messages never leave your phone.":
         "Filtrenin internet erişimi yoktur ve hiçbir şey kaydedemez, yani mesajların telefonundan asla çıkmaz.",
     "What Red Card checks": "Red Card neyi kontrol eder",
@@ -155,27 +161,43 @@ TR = {
         "Gönderen bu iPhone'daki Kuralların listesine eklenir. İstediğin zaman oradan kaldırabilirsin.",
 }
 
-root = pathlib.Path(__file__).resolve().parent.parent
-sources = "\n".join(p.read_text() for p in (root / "RedCard").rglob("*.swift"))
-
-# Every key must exist in the code (placeholders become interpolations).
-missing = []
-for key in TR:
-    pattern = re.escape(key).replace(re.escape("%lld"), r"\\\([^)]*\)").replace(re.escape("%@"), r"\\\([^)]*\)")
-    if not re.search(pattern, sources):
-        missing.append(key)
-if missing:
-    print("Keys not found in Swift sources:", *missing, sep="\n  ")
-    sys.exit(1)
-
-catalog = {
-    "sourceLanguage": "en",
-    "strings": {
-        key: {"localizations": {"tr": {"stringUnit": {"state": "translated", "value": value}}}}
-        for key, value in sorted(TR.items())
-    },
-    "version": "1.0",
+# Strings of the report sheet shown in Messages (RedCardReport target).
+REPORT_TR = {
+    "Message": "Mesaj",
+    "Is this a bet message?": "Bu bir bet mesajı mı?",
+    "Yes, it's a betting or casino ad": "Evet, bahis veya casino reklamı",
+    "No, it's a normal message": "Hayır, normal bir mesaj",
+    "When you tap Report, only the text of this message, the kind of sender (for example “mobile number”) and Red Card's own score are sent to Red Card. The sender's number, your number and who you are are never sent. Reports are used only to teach the filter new bet messages.":
+        "Bildir'e dokunduğunda Red Card'a yalnızca bu mesajın metni, gönderenin türü (örneğin “cep numarası”) ve Red Card'ın verdiği puan gönderilir. Gönderenin numarası, senin numaran ve kim olduğun asla gönderilmez. Bildirimler yalnızca filtreye yeni bet mesajlarını öğretmek için kullanılır.",
 }
-out = root / "RedCard" / "Localizable.xcstrings"
-out.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n")
-print(f"Wrote {len(TR)} strings to {out.relative_to(root)}")
+
+root = pathlib.Path(__file__).resolve().parent.parent
+
+
+def write_catalog(strings: dict, folder: str) -> None:
+    """Checks every key exists in the folder's Swift code, then writes its catalog."""
+    sources = "\n".join(p.read_text() for p in (root / folder).rglob("*.swift"))
+    missing = []
+    for key in strings:
+        pattern = re.escape(key).replace(re.escape("%lld"), r"\\\([^)]*\)").replace(re.escape("%@"), r"\\\([^)]*\)")
+        if not re.search(pattern, sources):
+            missing.append(key)
+    if missing:
+        print(f"Keys not found in {folder}:", *missing, sep="\n  ")
+        sys.exit(1)
+
+    catalog = {
+        "sourceLanguage": "en",
+        "strings": {
+            key: {"localizations": {"tr": {"stringUnit": {"state": "translated", "value": value}}}}
+            for key, value in sorted(strings.items())
+        },
+        "version": "1.0",
+    }
+    out = root / folder / "Localizable.xcstrings"
+    out.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n")
+    print(f"Wrote {len(strings)} strings to {out.relative_to(root)}")
+
+
+write_catalog(TR, "RedCard")
+write_catalog(REPORT_TR, "RedCardReport")

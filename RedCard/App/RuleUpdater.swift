@@ -5,11 +5,9 @@ import RedCardCore
 /// app update. It only *downloads* one public file: nothing about the person
 /// or their messages is ever sent.
 struct RuleUpdater {
-    /// Where the published rules live (`Rules/rules.json` in the repository).
-    /// Leave `nil` until the file is published; the app then keeps using the
-    /// rules built into it.
-    /// Example: `https://raw.githubusercontent.com/<account>/RedCard/main/Rules/rules.json`
-    static let rulesURL: URL? = nil
+    /// Where the published rules live (a copy of `Rules/rules.json`, served
+    /// by Red Card's server). Set to `nil` to use only the built-in rules.
+    static let rulesURL: URL? = ReportServer.rulesURL
 
     /// How often to look for new rules.
     static let checkInterval: TimeInterval = 24 * 60 * 60

@@ -1,6 +1,8 @@
 import SwiftUI
 
-/// The app's signature graphic: a red card with a message bubble cut out of it.
+/// The app's signature graphic: a flat red card with a crossed-out message
+/// bubble ("message blocked"). The same design as the app icon, drawn by
+/// `Tools/MakeAppIcon.swift`.
 struct RedCardMark: View {
     var width: CGFloat = 120
     /// Size of the bubble relative to its resting size. The launch splash
@@ -9,27 +11,40 @@ struct RedCardMark: View {
 
     var body: some View {
         let height = width / Theme.cardAspectRatio
-        let shape = RoundedRectangle(cornerRadius: width * Theme.cardCornerFraction)
+        let bubbleWidth = width * 0.56
 
-        shape
-            .fill(
-                LinearGradient(
-                    colors: [Color(.cardShine), Color(.cardRed)],
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                )
-            )
-            .overlay {
-                // Punch the bubble out of the card so the background shows through.
-                SpeechBubble()
-                    .frame(width: width * 0.54, height: width * 0.48)
-                    .scaleEffect(bubbleScale)
-                    .blendMode(.destinationOut)
+        RoundedRectangle(cornerRadius: width * Theme.cardCornerFraction)
+            .fill(Color(.cardRed))
+            .overlay(alignment: .bottom) {
+                // Thin darker band: the edge of a physical card.
+                Rectangle()
+                    .fill(Color(.cardEdge))
+                    .frame(height: height * 0.06)
             }
-            .compositingGroup()
+            .overlay {
+                ZStack {
+                    SpeechBubble()
+                        .fill(.white)
+                    BubbleSlash()
+                        .stroke(Color(.cardRed), style: StrokeStyle(lineWidth: bubbleWidth * 0.12, lineCap: .round))
+                }
+                .frame(width: bubbleWidth, height: width * 0.48)
+                .scaleEffect(bubbleScale)
+            }
+            .clipShape(.rect(cornerRadius: width * Theme.cardCornerFraction))
             .frame(width: width, height: height)
-            .shadow(color: Color(.cardRed).opacity(0.35), radius: width * 0.12, y: width * 0.08)
+            .shadow(color: .black.opacity(0.22), radius: width * 0.1, y: width * 0.06)
             .accessibilityHidden(true)
+    }
+}
+
+/// The slash across the bubble, from its bottom left to its top right.
+nonisolated struct BubbleSlash: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        path.move(to: CGPoint(x: rect.minX - rect.width * 0.05, y: rect.maxY + rect.height * 0.02))
+        path.addLine(to: CGPoint(x: rect.maxX + rect.width * 0.05, y: rect.minY - rect.height * 0.02))
+        return path
     }
 }
 

@@ -4,7 +4,8 @@ import RedCardCore
 struct HomeView: View {
     @Environment(SettingsModel.self) private var model
     @AppStorage("hasCompletedSetup") private var hasCompletedSetup = false
-    @State private var isShowingSetup = false
+    @State private var isShowingSetup = ScreenshotMode.current == .setup
+    @State private var isShowingTester = ScreenshotMode.current == .tester
 
     var body: some View {
         @Bindable var model = model
@@ -58,6 +59,10 @@ struct HomeView: View {
                 }
             }
             .navigationTitle("Red Card")
+            .navigationDestination(isPresented: $isShowingTester) {
+                // Only used by the screenshot mode.
+                MessageTesterView(startsWithSample: true)
+            }
             .sheet(isPresented: $isShowingSetup) {
                 SetupGuideView {
                     hasCompletedSetup = true

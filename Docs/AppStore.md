@@ -15,8 +15,8 @@ Karakter sınırları Apple'ın sınırlarıdır; hepsi kontrol edildi.
 | Fiyat | Ücretsiz |
 | Yaş sınırı | 4+ (anketteki her soruya "Yok / None") |
 | Telif | © 2026 Batuhan Yeşilyurt |
-| Gizlilik politikası URL'si | `Docs/privacy-policy.html` dosyasının yayınlandığı adres |
-| Destek URL'si | Gizlilik sayfasıyla aynı adres olabilir |
+| Gizlilik politikası URL'si | `https://redcard.batudev.com/privacy` |
+| Destek URL'si | `https://redcard.batudev.com` |
 
 ## Türkçe
 
@@ -39,7 +39,7 @@ Karakter sınırları Apple'ın sınırlarıdır; hepsi kontrol edildi.
 > Banka, kargo ve doğrulama kodu mesajlarına dokunmaz. Bankaların bonus kart kampanyaları da normal mesaj olarak kalır.
 >
 > GİZLİLİK
-> Her şey telefonunda olur. Filtrenin internet erişimi yoktur ve hiçbir şey kaydedemez. Hesap yok, reklam yok, takip yok. Mesajların telefonundan asla çıkmaz.
+> Her şey telefonunda olur. Filtrenin internet erişimi yoktur ve hiçbir şey kaydedemez. Hesap yok, reklam yok, takip yok. Bir mesajı kendin bildirmedikçe mesajların telefonundan çıkmaz; bildirdiğinde de numaran gönderilmez.
 >
 > ÖZELLİKLER
 > • Kurar kurmaz çalışır, ayar gerektirmez
@@ -48,6 +48,7 @@ Karakter sınırları Apple'ın sınırlarıdır; hepsi kontrol edildi.
 > • Üç hassasiyet seviyesi: Rahat, Dengeli, Sıkı
 > • Eski bet mesajlarını hızlıca silmek için rehber
 > • Kurallar yeni hilelere karşı düzenli olarak güncellenir
+> • Kaçan bir bet mesajını Mesajlar'dan tek dokunuşla bildir, filtre herkes için öğrensin
 > • Türkçe ve İngilizce, açık ve koyu mod
 >
 > Tamamen ücretsizdir. Uygulama içi satın alma yoktur.
@@ -78,7 +79,7 @@ Karakter sınırları Apple'ın sınırlarıdır; hepsi kontrol edildi.
 > Bank, delivery and verification-code messages are left alone.
 >
 > PRIVACY
-> Everything happens on your iPhone. The filter has no internet access and can't store anything. No account, no ads, no tracking. Your messages never leave your phone.
+> Everything happens on your iPhone. The filter has no internet access and can't store anything. No account, no ads, no tracking. Unless you report a message yourself, your messages never leave your phone, and even then your number is never sent.
 >
 > FEATURES
 > • Works as soon as it's switched on
@@ -87,6 +88,7 @@ Karakter sınırları Apple'ın sınırlarıdır; hepsi kontrol edildi.
 > • Three strictness levels: Relaxed, Balanced, Strict
 > • A guide to clearing old betting texts quickly
 > • Rules are updated regularly against new tricks
+> • Report a missed betting text from Messages in one tap, so the filter learns for everyone
 > • English and Turkish, light and dark mode
 >
 > Completely free, with no in-app purchases.
@@ -98,17 +100,31 @@ Karakter sınırları Apple'ın sınırlarıdır; hepsi kontrol edildi.
 
 ## Uygulama gizliliği (App Privacy)
 
-"Veri toplanıyor mu?" sorusuna **Hayır, bu uygulama veri toplamaz** (Data Not Collected) seç.
-Kural dosyası indirmek veri toplamak sayılmaz: uygulama hiçbir veri göndermez.
+Kullanıcı bir mesajı **kendisi bildirdiğinde** mesajın metni sunucuya gittiği için Apple'a göre bu "veri toplama" sayılır. App Store Connect'te şöyle doldur:
+
+| Soru | Cevap |
+|---|---|
+| Bu uygulamadan veri topluyor musunuz? | **Evet** |
+| Veri türü | **User Content › Other User Content** (bildirilen mesajın metni) |
+| Kullanıcının kimliğine bağlı mı? | **Hayır** (numara, ad, cihaz kimliği ve IP adresi saklanmaz) |
+| Takip (tracking) için mi? | **Hayır** |
+| Amaç | **App Functionality** (filtrenin yeni bet mesajlarını tanıması) |
+
+Kural dosyasını indirmek veri toplama sayılmaz, uygulama o sırada hiçbir veri göndermez.
 
 ## İnceleme ekibi için not (App Review Information)
 
 > Red Card is an SMS filter (Message Filter Extension). To test it: Settings › Apps › Messages › Unknown & Spam › SMS Filtering › choose Red Card. Then send an SMS from a number that is not in the device's contacts, for example: "Deneme bonusu 500 TL, guncel giris: bit.ly/abc". It is moved to Messages › Filters › Junk.
 > The "Try a message" screen in the app shows the same classification without sending an SMS (tap "Use a sample bet message").
-> The app collects no data. The filter runs entirely on the device and has no network access.
+> The filter runs entirely on the device and has no network access. The only data that leaves the device is a message the user chooses to report from Messages (Report Junk › Red Card): the message text, the kind of sender and the app's own score are sent to https://redcard.batudev.com/api/report. No phone numbers or identifiers are sent.
 
 Giriş bilgisi gerekmez (uygulamada hesap yok).
 
 ## Ekran görüntüleri
 
-`Docs/AppStore/Screenshots/` klasöründe, 6,9 inç (iPhone Pro Max) boyutunda, Türkçe (`tr`) ve İngilizce (`en`) olarak hazır.
+`Docs/AppStore/Screenshots/` klasöründe, 6,9 inç (iPhone Pro Max, 1320×2868) boyutunda, Türkçe (`tr`) ve İngilizce (`en`) olarak hazır.
+Arayüz değişince hepsini tek komutla yeniden al:
+
+```bash
+Tools/screenshots.sh
+```

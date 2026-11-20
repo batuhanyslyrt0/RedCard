@@ -4,7 +4,7 @@ import SwiftUI
 struct RedCardApp: App {
     @Environment(\.scenePhase) private var scenePhase
     @State private var model = SettingsModel()
-    @State private var isShowingSplash = true
+    @State private var isShowingSplash = ScreenshotMode.current == nil
 
     var body: some Scene {
         WindowGroup {

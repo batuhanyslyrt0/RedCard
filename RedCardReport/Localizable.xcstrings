@@ -1,0 +1,56 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "Is this a bet message?": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu bir bet mesajı mı?"
+          }
+        }
+      }
+    },
+    "Message": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mesaj"
+          }
+        }
+      }
+    },
+    "No, it's a normal message": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hayır, normal bir mesaj"
+          }
+        }
+      }
+    },
+    "When you tap Report, only the text of this message, the kind of sender (for example “mobile number”) and Red Card's own score are sent to Red Card. The sender's number, your number and who you are are never sent. Reports are used only to teach the filter new bet messages.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bildir'e dokunduğunda Red Card'a yalnızca bu mesajın metni, gönderenin türü (örneğin “cep numarası”) ve Red Card'ın verdiği puan gönderilir. Gönderenin numarası, senin numaran ve kim olduğun asla gönderilmez. Bildirimler yalnızca filtreye yeni bet mesajlarını öğretmek için kullanılır."
+          }
+        }
+      }
+    },
+    "Yes, it's a betting or casino ad": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Evet, bahis veya casino reklamı"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

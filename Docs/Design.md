@@ -9,15 +9,15 @@
 
 | Name        | Light     | Dark      | Role |
 |-------------|-----------|-----------|------|
-| Card Red    | `#D7182A` | `#FF3D4A` | The only brand colour: the card, tint, primary buttons |
-| Card Shine  | `#F2545F` | `#FF7A83` | Top-left highlight inside the card |
+| Card Red    | `#C8102E` | `#E3202F` | The only brand colour: the card, tint, primary buttons |
+| Card Edge   | `#9E0B23` | `#B5121F` | Thin band along the card's bottom edge |
 | Pass Green  | system green | system green | "This message passes" in the tester only |
 | Surface     | system grouped background | system grouped background | Native iOS surfaces everywhere else |
 | Text        | system label colours | system label colours | No custom text colours |
 
 **Type:** SF Pro throughout. Headlines use SF Pro *Expanded* (`.fontWidth(.expanded)`) in bold, which gives the app a recognisable, sporty voice without a custom font. Body, lists and buttons stay standard SF Pro so Dynamic Type and accessibility work as Apple intends.
 
-**Layout:** native `List` / `insetGrouped` screens. One custom element: a large, slightly tilted red card at the top of the home screen. Content is left aligned.
+**Layout:** native `List` / `insetGrouped` screens. One custom element: a large, slightly tilted, flat red card with a crossed-out white message bubble ("message blocked") at the top of the home screen. No gradients: an earlier red-to-pink gradient with a white blob read too much like a dating app. Content is left aligned.
 
 ```
 ┌──────────────────────────────┐

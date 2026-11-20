@@ -371,3 +371,22 @@ struct SenderInfo {
         return national.hasPrefix("5")
     }
 }
+
+// MARK: - Public sender description
+
+/// A privacy-friendly description of a sender, used in reports instead of
+/// the number itself: `personalNumber`, `foreignNumber`, `shortCode`,
+/// `otherNumber`, `email`, `alphanumeric` or `unknown`.
+public enum SenderCategory {
+    public static func name(for sender: String?) -> String {
+        guard let info = SenderInfo(sender) else { return "unknown" }
+        switch info.kind {
+        case .personalNumber: return "personalNumber"
+        case .foreignNumber: return "foreignNumber"
+        case .shortCode: return "shortCode"
+        case .otherNumber: return "otherNumber"
+        case .email: return "email"
+        case .alphanumeric: return "alphanumeric"
+        }
+    }
+}

@@ -10,3 +10,7 @@ build/
 
 # macOS
 .DS_Store
+
+# Server: copied from Rules/ by deploy.sh, and reports stored on the server
+Server/public/rules.json
+Server/data/

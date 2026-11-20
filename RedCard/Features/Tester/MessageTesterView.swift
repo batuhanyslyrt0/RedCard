@@ -5,8 +5,17 @@ import RedCardCore
 /// and why. Uses exactly the same classifier and settings as the extension.
 struct MessageTesterView: View {
     @Environment(SettingsModel.self) private var model
-    @State private var message = ""
-    @State private var sender = ""
+    @State private var message: String
+    @State private var sender: String
+
+    // Bet spam is Turkish, so the sample stays Turkish in every language.
+    private static let sampleMessage = "D.E.N.E.M.E B0NUSU 500 TL + 100 FS! Çevrimsiz, anında çekim. Güncel giriş: cutt.ly/xyz"
+    private static let sampleSender = "+90 532 000 00 00"
+
+    init(startsWithSample: Bool = false) {
+        _message = State(initialValue: startsWithSample ? Self.sampleMessage : "")
+        _sender = State(initialValue: startsWithSample ? Self.sampleSender : "")
+    }
 
     var body: some View {
         Form {
@@ -83,9 +92,8 @@ struct MessageTesterView: View {
     }
 
     private func fillSample() {
-        // Bet spam is Turkish, so the sample stays Turkish in every language.
-        message = "D.E.N.E.M.E B0NUSU 500 TL + 100 FS! Çevrimsiz, anında çekim. Güncel giriş: cutt.ly/xyz"
-        sender = "+90 532 000 00 00"
+        message = Self.sampleMessage
+        sender = Self.sampleSender
     }
 }
 

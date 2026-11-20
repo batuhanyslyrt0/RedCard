@@ -8,8 +8,16 @@ struct AboutView: View {
     var body: some View {
         List {
             Section("Private by design") {
-                Label("Every message is checked on your iPhone. Red Card has no servers, no account and no tracking.", systemImage: "iphone")
+                Label("Every message is checked on your iPhone. Red Card has no account and no tracking.", systemImage: "iphone")
                 Label("The filter has no internet access and can't store anything, so your messages never leave your phone.", systemImage: "lock")
+                Label("The only exception is a message you report yourself from Messages: then its text is sent to Red Card, without your number or the sender's number.", systemImage: "exclamationmark.bubble")
+                Link(destination: ReportServer.privacyPolicyURL) {
+                    Label("Privacy policy", systemImage: "hand.raised")
+                }
+            }
+
+            Section("Missed a bet message?") {
+                Label("In Messages, report the message as junk and choose Red Card. It helps the filter learn new bet messages for everyone.", systemImage: "arrowshape.turn.up.right")
             }
 
             Section("What Red Card checks") {

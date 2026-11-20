@@ -1,20 +1,23 @@
 // Draws Red Card's app icons (light, dark, tinted) as 1024×1024 PNGs.
 // Run from the project folder:  swift Tools/MakeAppIcon.swift
+//
+// Design: a flat red card, slightly tilted, with a thin darker band along the
+// bottom edge and a white message bubble crossed out by a red slash
+// ("message blocked"). Keep in sync with RedCardMark.swift.
 import AppKit
 import CoreGraphics
 import ImageIO
 import UniformTypeIdentifiers
 
-let size = 1024
+let size: CGFloat = 1024
 let outputFolder = URL(fileURLWithPath: "RedCard/Assets.xcassets/AppIcon.appiconset", isDirectory: true)
 
 struct Palette {
-    var backgroundTop: CGColor
-    var backgroundBottom: CGColor
-    var cardShine: CGColor
-    var cardBase: CGColor
+    var background: CGColor
+    var card: CGColor
+    var cardEdge: CGColor
+    var bubble: CGColor
     var shadow: CGColor
-    var hasBackground = true
 }
 
 func rgb(_ hex: UInt32, alpha: CGFloat = 1) -> CGColor {
@@ -47,101 +50,72 @@ func bubblePath(in rect: CGRect) -> CGPath {
 func drawIcon(palette: Palette, to url: URL) throws {
     let colorSpace = CGColorSpace(name: CGColorSpace.sRGB)!
     guard let context = CGContext(
-        data: nil, width: size, height: size, bitsPerComponent: 8, bytesPerRow: 0,
-        space: colorSpace, bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue
+        data: nil, width: Int(size), height: Int(size), bitsPerComponent: 8, bytesPerRow: 0,
+        space: colorSpace, bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue
     ) else { throw CocoaError(.featureUnsupported) }
 
-    let canvas = CGRect(x: 0, y: 0, width: size, height: size)
+    // App Store icons must be opaque: a flat background, no alpha.
+    context.setFillColor(palette.background)
+    context.fill(CGRect(x: 0, y: 0, width: size, height: size))
 
-    // Background
-    if palette.hasBackground {
-        let gradient = CGGradient(colorsSpace: colorSpace,
-                                  colors: [palette.backgroundTop, palette.backgroundBottom] as CFArray,
-                                  locations: [0, 1])!
-        context.drawLinearGradient(gradient, start: CGPoint(x: 0, y: canvas.maxY),
-                                   end: CGPoint(x: 0, y: 0), options: [])
-    }
-
-    // Card, tilted like a card being held up
-    let cardWidth: CGFloat = 470
-    let cardHeight: CGFloat = cardWidth / 0.7
+    let cardWidth: CGFloat = 460
+    let cardHeight = cardWidth / 0.7
     let cardRect = CGRect(x: -cardWidth / 2, y: -cardHeight / 2, width: cardWidth, height: cardHeight)
-    let cardPath = CGPath(roundedRect: cardRect, cornerWidth: cardWidth * 0.1,
-                          cornerHeight: cardWidth * 0.1, transform: nil)
+    let cardPath = CGPath(roundedRect: cardRect, cornerWidth: cardWidth * 0.09,
+                          cornerHeight: cardWidth * 0.09, transform: nil)
 
     context.saveGState()
-    context.translateBy(x: CGFloat(size) / 2 + 10, y: CGFloat(size) / 2 - 6)
-    context.rotate(by: 10 * .pi / 180) // positive = counter-clockwise in CG, matches -8° in SwiftUI
+    context.translateBy(x: size / 2 + 8, y: size / 2 - 8)
+    context.rotate(by: 9.6 * .pi / 180) // matches the -8° tilt used in the app
 
-    // Soft shadow
+    // Card with a soft, neutral shadow
     context.saveGState()
-    context.setShadow(offset: CGSize(width: 0, height: -36), blur: 70, color: palette.shadow)
+    context.setShadow(offset: CGSize(width: 0, height: -28), blur: 60, color: palette.shadow)
     context.addPath(cardPath)
-    context.setFillColor(palette.cardBase)
+    context.setFillColor(palette.card)
     context.fillPath()
     context.restoreGState()
 
-    // Card gradient
     context.saveGState()
     context.addPath(cardPath)
     context.clip()
-    let cardGradient = CGGradient(colorsSpace: colorSpace,
-                                  colors: [palette.cardShine, palette.cardBase] as CFArray,
-                                  locations: [0, 1])!
-    context.drawLinearGradient(cardGradient, start: CGPoint(x: cardRect.minX, y: cardRect.maxY),
-                               end: CGPoint(x: cardRect.maxX, y: cardRect.minY), options: [])
 
-    // Bubble cut-out: clear the pixels so the background shows through
-    let bubbleWidth = cardWidth * 0.54
+    // Thin darker band: the edge of a physical card
+    context.setFillColor(palette.cardEdge)
+    context.fill(CGRect(x: cardRect.minX, y: cardRect.minY, width: cardWidth, height: cardHeight * 0.06))
+
+    // White bubble, crossed out
+    let bubbleWidth = cardWidth * 0.56
     let bubbleHeight = cardWidth * 0.48
-    let bubbleRect = CGRect(x: -bubbleWidth / 2, y: -bubbleHeight / 2,
-                            width: bubbleWidth, height: bubbleHeight)
-    context.setBlendMode(.clear)
+    let bubbleRect = CGRect(x: -bubbleWidth / 2, y: -bubbleHeight / 2, width: bubbleWidth, height: bubbleHeight)
     context.addPath(bubblePath(in: bubbleRect))
+    context.setFillColor(palette.bubble)
     context.fillPath()
-    context.setBlendMode(.normal)
+
+    context.setStrokeColor(palette.card)
+    context.setLineCap(.round)
+    context.setLineWidth(bubbleWidth * 0.12)
+    context.move(to: CGPoint(x: bubbleRect.minX - bubbleWidth * 0.05, y: bubbleRect.minY - bubbleHeight * 0.02))
+    context.addLine(to: CGPoint(x: bubbleRect.maxX + bubbleWidth * 0.05, y: bubbleRect.maxY + bubbleHeight * 0.02))
+    context.strokePath()
+
     context.restoreGState()
     context.restoreGState()
 
-    // Fill the cut-out with the background again (an icon must be opaque)
-    if palette.hasBackground {
-        guard let partial = context.makeImage() else { throw CocoaError(.featureUnsupported) }
-        context.clear(canvas)
-        let gradient = CGGradient(colorsSpace: colorSpace,
-                                  colors: [palette.backgroundTop, palette.backgroundBottom] as CFArray,
-                                  locations: [0, 1])!
-        context.drawLinearGradient(gradient, start: CGPoint(x: 0, y: canvas.maxY),
-                                   end: CGPoint(x: 0, y: 0), options: [])
-        context.draw(partial, in: canvas)
-    }
-
-    // App Store icons must not have an alpha channel, so copy the result
-    // into an opaque bitmap before saving.
-    guard let drawn = context.makeImage(),
-          let opaque = CGContext(
-              data: nil, width: size, height: size, bitsPerComponent: 8, bytesPerRow: 0,
-              space: colorSpace, bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue
-          )
-    else { throw CocoaError(.fileWriteUnknown) }
-    opaque.draw(drawn, in: canvas)
-
-    guard let image = opaque.makeImage(),
+    guard let image = context.makeImage(),
           let destination = CGImageDestinationCreateWithURL(url as CFURL, UTType.png.identifier as CFString, 1, nil)
     else { throw CocoaError(.fileWriteUnknown) }
     CGImageDestinationAddImage(destination, image, nil)
     guard CGImageDestinationFinalize(destination) else { throw CocoaError(.fileWriteUnknown) }
 }
 
-let light = Palette(backgroundTop: rgb(0xFBFBFC), backgroundBottom: rgb(0xE6E6EA),
-                    cardShine: rgb(0xF2545F), cardBase: rgb(0xD7182A),
-                    shadow: rgb(0x8A0E1A, alpha: 0.45))
-let dark = Palette(backgroundTop: rgb(0x2A2A2F), backgroundBottom: rgb(0x0E0E10),
-                   cardShine: rgb(0xFF7A83), cardBase: rgb(0xFF3D4A),
-                   shadow: rgb(0x000000, alpha: 0.6))
+let light = Palette(background: rgb(0xF4F4F6), card: rgb(0xC8102E), cardEdge: rgb(0x9E0B23),
+                    bubble: rgb(0xFFFFFF), shadow: rgb(0x000000, alpha: 0.22))
+let dark = Palette(background: rgb(0x17171A), card: rgb(0xE3202F), cardEdge: rgb(0xB5121F),
+                   bubble: rgb(0xFFFFFF), shadow: rgb(0x000000, alpha: 0.5))
 // Tinted icons are drawn in greyscale; iOS applies the person's tint colour.
-let tinted = Palette(backgroundTop: rgb(0x000000), backgroundBottom: rgb(0x000000),
-                     cardShine: rgb(0xFFFFFF), cardBase: rgb(0xB8B8B8),
-                     shadow: rgb(0x000000, alpha: 0.0))
+let tinted = Palette(background: rgb(0x000000), card: rgb(0xBDBDBD), cardEdge: rgb(0x8C8C8C),
+                     bubble: rgb(0xFFFFFF), shadow: rgb(0x000000, alpha: 0))
 
 try FileManager.default.createDirectory(at: outputFolder, withIntermediateDirectories: true)
 try drawIcon(palette: light, to: outputFolder.appendingPathComponent("AppIcon.png"))

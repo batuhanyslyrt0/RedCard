@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSExtension</key>
+	<dict>
+		<key>NSExtensionAttributes</key>
+		<dict>
+			<!-- iOS sends the report payload here (keep in sync with ReportServer.swift). -->
+			<key>ILClassificationExtensionNetworkReportDestination</key>
+			<string>https://redcard.batudev.com/api/report</string>
+		</dict>
+		<key>NSExtensionPointIdentifier</key>
+		<string>com.apple.identitylookup.classification-ui</string>
+		<key>NSExtensionPrincipalClass</key>
+		<string>$(PRODUCT_MODULE_NAME).ReportViewController</string>
+	</dict>
+</dict>
+</plist>
