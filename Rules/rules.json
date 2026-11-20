@@ -1,0 +1,585 @@
+{
+  "chatInviteDomains" : [
+    "t.me",
+    "telegram.me",
+    "wa.me",
+    "chat.whatsapp.com"
+  ],
+  "gamblingStems" : [
+    "bet",
+    "bahis",
+    "casino",
+    "slot",
+    "jackpot",
+    "rulet",
+    "poker",
+    "iddaa",
+    "kumar"
+  ],
+  "gamblingTopLevelDomains" : [
+    "bet",
+    "casino",
+    "poker",
+    "games",
+    "bingo"
+  ],
+  "knownTopLevelDomains" : [
+    "com",
+    "net",
+    "org",
+    "tr",
+    "io",
+    "co",
+    "me",
+    "ly",
+    "gl",
+    "at",
+    "gd",
+    "ee",
+    "id",
+    "info",
+    "biz",
+    "app",
+    "store",
+    "shop",
+    "one",
+    "gg",
+    "tv",
+    "us",
+    "uk",
+    "eu",
+    "de",
+    "ru",
+    "in",
+    "cloud",
+    "tech",
+    "fr",
+    "cz",
+    "az",
+    "xyz",
+    "top",
+    "club",
+    "live",
+    "vip",
+    "win",
+    "site",
+    "online",
+    "fun",
+    "icu",
+    "click",
+    "link",
+    "cc",
+    "pw",
+    "sbs",
+    "cfd",
+    "bond",
+    "lat",
+    "rest",
+    "monster",
+    "cyou",
+    "buzz",
+    "life",
+    "today",
+    "world",
+    "space",
+    "website",
+    "pro",
+    "ws",
+    "to",
+    "bet",
+    "casino",
+    "poker",
+    "games",
+    "bingo",
+    "bio"
+  ],
+  "safeTerms" : [
+    {
+      "term" : "doğrulama kodu",
+      "weight" : -40
+    },
+    {
+      "term" : "doğrulama kodunuz",
+      "weight" : -40
+    },
+    {
+      "term" : "tek kullanımlık şifre",
+      "weight" : -40
+    },
+    {
+      "term" : "şifreniz",
+      "weight" : -30
+    },
+    {
+      "term" : "verification code",
+      "weight" : -40
+    },
+    {
+      "term" : "e-devlet",
+      "weight" : -30
+    },
+    {
+      "term" : "bonus kart",
+      "weight" : -35
+    },
+    {
+      "term" : "bonus card",
+      "weight" : -35
+    },
+    {
+      "term" : "bonusflaş",
+      "weight" : -35
+    },
+    {
+      "term" : "bonus trink",
+      "weight" : -35
+    },
+    {
+      "term" : "garanti bbva",
+      "weight" : -25
+    },
+    {
+      "term" : "kargonuz",
+      "weight" : -20
+    },
+    {
+      "term" : "siparişiniz",
+      "weight" : -15
+    },
+    {
+      "term" : "randevunuz",
+      "weight" : -15
+    }
+  ],
+  "shortenerDomains" : [
+    "bit.ly",
+    "t.ly",
+    "tinyurl.com",
+    "cutt.ly",
+    "rb.gy",
+    "is.gd",
+    "v.gd",
+    "shorturl.at",
+    "rebrand.ly",
+    "t.co",
+    "goo.gl",
+    "s.id",
+    "tiny.cc",
+    "ow.ly",
+    "bl.ink",
+    "shor.by",
+    "urlz.fr",
+    "linktr.ee",
+    "tr.ee",
+    "bitly.ws",
+    "qrco.de",
+    "u.to",
+    "clck.ru",
+    "lnk.bio"
+  ],
+  "stemStoplist" : [
+    "sohbet",
+    "muhabbet",
+    "rekabet",
+    "nobet",
+    "gurbet",
+    "kurbet",
+    "akibet",
+    "musibet",
+    "diyabet",
+    "alfabe",
+    "beton",
+    "betim",
+    "betik",
+    "heybet",
+    "nisbet",
+    "mahabbet",
+    "betul",
+    "ubeyt",
+    "tebessum",
+    "better",
+    "between",
+    "betray",
+    "beta",
+    "alphabet",
+    "abet",
+    "diabet",
+    "bethlehem"
+  ],
+  "suspiciousTopLevelDomains" : [
+    "xyz",
+    "top",
+    "club",
+    "live",
+    "vip",
+    "win",
+    "site",
+    "online",
+    "fun",
+    "icu",
+    "click",
+    "link",
+    "cc",
+    "pw",
+    "sbs",
+    "cfd",
+    "bond",
+    "lat",
+    "rest",
+    "monster",
+    "cyou",
+    "buzz",
+    "life",
+    "today",
+    "world",
+    "space",
+    "website",
+    "pro",
+    "ws",
+    "to"
+  ],
+  "terms" : [
+    {
+      "term" : "deneme bonusu",
+      "weight" : 60
+    },
+    {
+      "term" : "deneme bonus",
+      "weight" : 60
+    },
+    {
+      "term" : "yatırım bonusu",
+      "weight" : 55
+    },
+    {
+      "term" : "yatırımsız bonus",
+      "weight" : 60
+    },
+    {
+      "term" : "kayıp bonusu",
+      "weight" : 55
+    },
+    {
+      "term" : "hoşgeldin bonusu",
+      "weight" : 45
+    },
+    {
+      "term" : "hoş geldin bonusu",
+      "weight" : 45
+    },
+    {
+      "term" : "ilk üyelik bonusu",
+      "weight" : 50
+    },
+    {
+      "term" : "üyelik bonusu",
+      "weight" : 40
+    },
+    {
+      "term" : "bedava bonus",
+      "weight" : 50
+    },
+    {
+      "term" : "sınırsız bonus",
+      "weight" : 50
+    },
+    {
+      "term" : "bonus kodu",
+      "weight" : 30
+    },
+    {
+      "term" : "bonus",
+      "weight" : 15
+    },
+    {
+      "term" : "çevrimsiz",
+      "weight" : 45
+    },
+    {
+      "term" : "çevrim şartı",
+      "weight" : 40
+    },
+    {
+      "term" : "çevrim şartsız",
+      "weight" : 45
+    },
+    {
+      "term" : "çevrim",
+      "weight" : 15
+    },
+    {
+      "term" : "kayıp iadesi",
+      "weight" : 30
+    },
+    {
+      "term" : "cashback",
+      "weight" : 15
+    },
+    {
+      "term" : "promosyon kodu",
+      "weight" : 15
+    },
+    {
+      "term" : "freespin",
+      "weight" : 50
+    },
+    {
+      "term" : "free spin",
+      "weight" : 50
+    },
+    {
+      "term" : "bedava spin",
+      "weight" : 50
+    },
+    {
+      "term" : "ücretsiz spin",
+      "weight" : 50
+    },
+    {
+      "term" : "spin",
+      "weight" : 20
+    },
+    {
+      "term" : "slot",
+      "weight" : 20
+    },
+    {
+      "term" : "jackpot",
+      "weight" : 35
+    },
+    {
+      "term" : "sweet bonanza",
+      "weight" : 50
+    },
+    {
+      "term" : "gates of olympus",
+      "weight" : 50
+    },
+    {
+      "term" : "big bass",
+      "weight" : 30
+    },
+    {
+      "term" : "pragmatic play",
+      "weight" : 40
+    },
+    {
+      "term" : "aviator",
+      "weight" : 25
+    },
+    {
+      "term" : "maxwin",
+      "weight" : 40
+    },
+    {
+      "term" : "max win",
+      "weight" : 35
+    },
+    {
+      "term" : "freebet",
+      "weight" : 50
+    },
+    {
+      "term" : "free bet",
+      "weight" : 50
+    },
+    {
+      "term" : "bedava bahis",
+      "weight" : 55
+    },
+    {
+      "term" : "canlı bahis",
+      "weight" : 50
+    },
+    {
+      "term" : "canlı casino",
+      "weight" : 50
+    },
+    {
+      "term" : "online casino",
+      "weight" : 50
+    },
+    {
+      "term" : "casino",
+      "weight" : 45
+    },
+    {
+      "term" : "kumarhane",
+      "weight" : 45
+    },
+    {
+      "term" : "kumar",
+      "weight" : 25
+    },
+    {
+      "term" : "bahis",
+      "weight" : 35
+    },
+    {
+      "term" : "iddaa",
+      "weight" : 30
+    },
+    {
+      "term" : "rulet",
+      "weight" : 30
+    },
+    {
+      "term" : "blackjack",
+      "weight" : 35
+    },
+    {
+      "term" : "bakara",
+      "weight" : 30
+    },
+    {
+      "term" : "baccarat",
+      "weight" : 35
+    },
+    {
+      "term" : "poker",
+      "weight" : 20
+    },
+    {
+      "term" : "yüksek oran",
+      "weight" : 30
+    },
+    {
+      "term" : "en yüksek oran",
+      "weight" : 35
+    },
+    {
+      "term" : "rakipsiz oran",
+      "weight" : 40
+    },
+    {
+      "term" : "oranlar",
+      "weight" : 15
+    },
+    {
+      "term" : "kombine",
+      "weight" : 20
+    },
+    {
+      "term" : "kupon",
+      "weight" : 10
+    },
+    {
+      "term" : "anında çekim",
+      "weight" : 35
+    },
+    {
+      "term" : "hızlı çekim",
+      "weight" : 30
+    },
+    {
+      "term" : "limitsiz çekim",
+      "weight" : 40
+    },
+    {
+      "term" : "çekim limiti",
+      "weight" : 25
+    },
+    {
+      "term" : "ilk yatırım",
+      "weight" : 35
+    },
+    {
+      "term" : "para yatır",
+      "weight" : 20
+    },
+    {
+      "term" : "yatırım yap",
+      "weight" : 15
+    },
+    {
+      "term" : "hemen kazan",
+      "weight" : 20
+    },
+    {
+      "term" : "kazandınız",
+      "weight" : 15
+    },
+    {
+      "term" : "kazanma şansı",
+      "weight" : 15
+    },
+    {
+      "term" : "güncel giriş",
+      "weight" : 45
+    },
+    {
+      "term" : "güncel adres",
+      "weight" : 40
+    },
+    {
+      "term" : "giriş adresi",
+      "weight" : 40
+    },
+    {
+      "term" : "yeni giriş adresi",
+      "weight" : 45
+    },
+    {
+      "term" : "erişim adresi",
+      "weight" : 35
+    },
+    {
+      "term" : "adresimiz değişti",
+      "weight" : 40
+    },
+    {
+      "term" : "yeni adresimiz",
+      "weight" : 35
+    },
+    {
+      "term" : "curacao",
+      "weight" : 35
+    },
+    {
+      "term" : "lisanslı",
+      "weight" : 10
+    },
+    {
+      "term" : "vip üyelik",
+      "weight" : 20
+    },
+    {
+      "term" : "free spins",
+      "weight" : 50
+    },
+    {
+      "term" : "deposit bonus",
+      "weight" : 50
+    },
+    {
+      "term" : "no deposit",
+      "weight" : 40
+    },
+    {
+      "term" : "welcome bonus",
+      "weight" : 40
+    },
+    {
+      "term" : "betting",
+      "weight" : 35
+    },
+    {
+      "term" : "sportsbook",
+      "weight" : 45
+    },
+    {
+      "term" : "wager",
+      "weight" : 25
+    }
+  ],
+  "trustedDomainSuffixes" : [
+    "gov.tr",
+    "edu.tr",
+    "bel.tr",
+    "k12.tr",
+    "tsk.tr",
+    "pol.tr",
+    "turkiye.gov.tr"
+  ],
+  "version" : 1
+}

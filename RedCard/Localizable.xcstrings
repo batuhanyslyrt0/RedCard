@@ -1,0 +1,966 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "Add": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ekle"
+          }
+        }
+      }
+    },
+    "Add a phone number": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Telefon numarası ekle"
+          }
+        }
+      }
+    },
+    "Add a word or phrase": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kelime veya ifade ekle"
+          }
+        }
+      }
+    },
+    "Also catches messages with only a few betting signs. A normal message may occasionally end up in Junk.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Az sayıda bahis işareti taşıyan mesajları da yakalar. Ara sıra normal bir mesaj Gereksiz'e düşebilir."
+          }
+        }
+      }
+    },
+    "Always filter these senders": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu gönderenleri her zaman filtrele"
+          }
+        }
+      }
+    },
+    "Always filter these words": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu kelimeleri her zaman filtrele"
+          }
+        }
+      }
+    },
+    "Always filter this sender": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu göndereni her zaman filtrele"
+          }
+        }
+      }
+    },
+    "Any message containing one of these goes to Junk. Spelling tricks such as dots between letters are caught too.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bunlardan birini içeren her mesaj Gereksiz'e gider. Harflerin arasına nokta koymak gibi yazım hileleri de yakalanır."
+          }
+        }
+      }
+    },
+    "Apple doesn't let any app read or delete messages already on your iPhone, so old bet messages need to be removed in Messages. These are the quickest ways.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple, hiçbir uygulamanın iPhone'undaki mevcut mesajları okumasına veya silmesine izin vermez. Bu yüzden eski bet mesajlarını Mesajlar uygulamasından silmen gerekir. En hızlı yollar şunlar."
+          }
+        }
+      }
+    },
+    "Balanced": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dengeli"
+          }
+        }
+      }
+    },
+    "Bet messages stay out of your inbox.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bet mesajları artık gelen kutuna düşmez."
+          }
+        }
+      }
+    },
+    "Betting brand name “%@”": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bahis markası “%@”"
+          }
+        }
+      }
+    },
+    "Betting word “%@”": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bahis kelimesi “%@”"
+          }
+        }
+      }
+    },
+    "Chat group invite: %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sohbet grubu daveti: %@"
+          }
+        }
+      }
+    },
+    "Check in Settings": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayarlar'da kontrol et"
+          }
+        }
+      }
+    },
+    "Clean up old messages": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eski mesajları temizle"
+          }
+        }
+      }
+    },
+    "Close": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapat"
+          }
+        }
+      }
+    },
+    "Every message is checked on your iPhone. Red Card has no servers, no account and no tracking.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Her mesaj iPhone'unda kontrol edilir. Red Card'ın sunucusu, hesabı ve takibi yoktur."
+          }
+        }
+      }
+    },
+    "Fastest: with a Mac": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En hızlısı: Mac ile"
+          }
+        }
+      }
+    },
+    "Filters can't delete messages or block numbers. Filtered messages wait in Junk, where you can still read them.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filtreler mesaj silemez ve numara engelleyemez. Filtrelenen mesajlar Gereksiz klasöründe bekler, istersen yine okuyabilirsin."
+          }
+        }
+      }
+    },
+    "Filters can't keep a count, so Red Card can't show how many messages it filtered.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filtreler sayım tutamaz, bu yüzden Red Card kaç mesaj filtrelediğini gösteremez."
+          }
+        }
+      }
+    },
+    "For example +90 532 123 45 67. The sender helps a little, but the message text matters most.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Örneğin +90 532 123 45 67. Gönderen biraz yardımcı olur ama asıl önemli olan mesajın metni."
+          }
+        }
+      }
+    },
+    "Four steps in Settings": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayarlar'da dört adım"
+          }
+        }
+      }
+    },
+    "Goes to Junk": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gereksiz'e gider"
+          }
+        }
+      }
+    },
+    "Hold Command and click each bet conversation, or click the first one and Shift-click the last.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Command tuşunu basılı tutup her bet sohbetine tıkla ya da ilkine tıklayıp sonuncuya Shift ile tıkla."
+          }
+        }
+      }
+    },
+    "How Red Card works": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Red Card nasıl çalışır"
+          }
+        }
+      }
+    },
+    "Hundreds of conversations can be selected and deleted at once this way.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu yolla yüzlerce sohbeti tek seferde seçip silebilirsin."
+          }
+        }
+      }
+    },
+    "In Messages, tap Filters at the top left, then Junk. Filtered messages wait there without a notification.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mesajlar'da sol üstteki Filtreler'e, ardından Gereksiz'e dokun. Filtrelenen mesajlar orada bildirim göndermeden bekler."
+          }
+        }
+      }
+    },
+    "It looks for betting words, betting brand names, betting site links, bonus amounts and spelling tricks such as dots between letters.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bahis kelimelerine, bahis markalarına, bahis sitesi linklerine, bonus miktarlarına ve harflerin arasına nokta koymak gibi yazım hilelerine bakar."
+          }
+        }
+      }
+    },
+    "It's on": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Açtım"
+          }
+        }
+      }
+    },
+    "Link to a betting site: %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bahis sitesi linki: %@"
+          }
+        }
+      }
+    },
+    "Link: %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link: %@"
+          }
+        }
+      }
+    },
+    "Looks like an ordinary message: “%@”": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Normal bir mesaja benziyor: “%@”"
+          }
+        }
+      }
+    },
+    "Matches your allowed word “%@”": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İzin verdiğin kelimeyle eşleşiyor: “%@”"
+          }
+        }
+      }
+    },
+    "Matches your blocked word “%@”": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Engellediğin kelimeyle eşleşiyor: “%@”"
+          }
+        }
+      }
+    },
+    "Message": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mesaj"
+          }
+        }
+      }
+    },
+    "Messages containing one of these are never filtered, even if they look like betting.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bunlardan birini içeren mesajlar bahse benzese bile asla filtrelenmez."
+          }
+        }
+      }
+    },
+    "Messages from your contacts and iMessages are never sent to filters.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rehberindeki kişilerden gelen mesajlar ve iMessage'lar filtrelere hiç gönderilmez."
+          }
+        }
+      }
+    },
+    "Messages from your contacts are never checked or filtered.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rehberindeki kişilerden gelen mesajlar asla kontrol edilmez ve filtrelenmez."
+          }
+        }
+      }
+    },
+    "Money or bonus amount “%@”": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para veya bonus miktarı “%@”"
+          }
+        }
+      }
+    },
+    "Never filter these senders": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu gönderenleri asla filtreleme"
+          }
+        }
+      }
+    },
+    "Never filter these words": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu kelimeleri asla filtreleme"
+          }
+        }
+      }
+    },
+    "Never filter this sender": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu göndereni asla filtreleme"
+          }
+        }
+      }
+    },
+    "Numbers match in any format: 0532…, +90 532… and 532… are the same.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Numaralar her biçimde eşleşir: 0532…, +90 532… ve 532… aynı kabul edilir."
+          }
+        }
+      }
+    },
+    "On iPhone": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iPhone'da"
+          }
+        }
+      }
+    },
+    "On your iPhone, check that Messages in iCloud is on: Settings › your name › iCloud › Messages.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iPhone'unda iCloud'da Mesajlar'ın açık olduğundan emin ol: Ayarlar › adın › iCloud › Mesajlar."
+          }
+        }
+      }
+    },
+    "Once a day the app may download an updated list of betting rules. Nothing about you or your messages is sent.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uygulama günde bir kez güncel bahis kuralları listesini indirebilir. Sen veya mesajların hakkında hiçbir şey gönderilmez."
+          }
+        }
+      }
+    },
+    "Only messages that are clearly betting adverts go to Junk. Choose this if a normal message was ever filtered by mistake.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sadece açıkça bahis reklamı olan mesajlar Gereksiz'e gider. Normal bir mesaj yanlışlıkla filtrelendiyse bunu seç."
+          }
+        }
+      }
+    },
+    "Open Messages on a Mac signed in with the same Apple Account.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aynı Apple Hesabı ile giriş yapılmış bir Mac'te Mesajlar'ı aç."
+          }
+        }
+      }
+    },
+    "Open Messages, tap Filters at the top left and choose Unknown Senders.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mesajlar'ı aç, sol üstteki Filtreler'e dokun ve Bilinmeyen Gönderenler'i seç."
+          }
+        }
+      }
+    },
+    "Open Settings": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayarlar'ı aç"
+          }
+        }
+      }
+    },
+    "Open the Settings app.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayarlar uygulamasını aç."
+          }
+        }
+      }
+    },
+    "Paste or type a message": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir mesaj yapıştır veya yaz"
+          }
+        }
+      }
+    },
+    "Press Delete. The conversations are removed from your iPhone too.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete tuşuna bas. Sohbetler iPhone'undan da silinir."
+          }
+        }
+      }
+    },
+    "Private by design": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gizlilik en baştan"
+          }
+        }
+      }
+    },
+    "Recommended. Catches almost every bet message while leaving bank, cargo and code messages alone.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Önerilen. Bet mesajlarının neredeyse hepsini yakalar; banka, kargo ve doğrulama kodu mesajlarına dokunmaz."
+          }
+        }
+      }
+    },
+    "Red Card": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Red Card"
+          }
+        }
+      }
+    },
+    "Red Card checks texts from unknown senders on your iPhone and moves betting and casino adverts to Junk.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Red Card, bilinmeyen numaralardan gelen SMS'leri iPhone'unda kontrol eder ve bahis ile casino reklamlarını Gereksiz klasörüne taşır."
+          }
+        }
+      }
+    },
+    "Red Card is free, with no ads and no in-app purchases.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Red Card ücretsizdir; reklam ve uygulama içi satın alma yoktur."
+          }
+        }
+      }
+    },
+    "Relaxed": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rahat"
+          }
+        }
+      }
+    },
+    "Rules version": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kural sürümü"
+          }
+        }
+      }
+    },
+    "SMS and MMS from numbers that aren't in your contacts.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rehberinde olmayan numaralardan gelen SMS ve MMS'ler."
+          }
+        }
+      }
+    },
+    "Score": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puan"
+          }
+        }
+      }
+    },
+    "Score %lld, filtered from %lld": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puan %1$lld, filtre sınırı %2$lld"
+          }
+        }
+      }
+    },
+    "Scroll down and tap Apps, then Messages.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aşağı kaydır, Uygulamalar'a ve ardından Mesajlar'a dokun."
+          }
+        }
+      }
+    },
+    "Sender (optional)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gönderen (isteğe bağlı)"
+          }
+        }
+      }
+    },
+    "Sender is on your allowed list: %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gönderen izin listende: %@"
+          }
+        }
+      }
+    },
+    "Sender is on your blocked list: %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gönderen engel listende: %@"
+          }
+        }
+      }
+    },
+    "Sent from a foreign number": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yurt dışı numarasından gönderilmiş"
+          }
+        }
+      }
+    },
+    "Sent from a personal mobile number": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bireysel bir cep numarasından gönderilmiş"
+          }
+        }
+      }
+    },
+    "Sent from an email address": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir e-posta adresinden gönderilmiş"
+          }
+        }
+      }
+    },
+    "Sent under a registered company name": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kayıtlı bir firma adıyla gönderilmiş"
+          }
+        }
+      }
+    },
+    "Shortened link: %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kısaltılmış link: %@"
+          }
+        }
+      }
+    },
+    "Stays in your inbox": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelen kutunda kalır"
+          }
+        }
+      }
+    },
+    "Strict": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sıkı"
+          }
+        }
+      }
+    },
+    "Strictness": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hassasiyet"
+          }
+        }
+      }
+    },
+    "Tap Unknown & Spam.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bilinmeyen ve Gereksiz'e dokun."
+          }
+        }
+      }
+    },
+    "Tap each bet conversation, then tap Delete.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Her bet sohbetine dokun, ardından Sil'e dokun."
+          }
+        }
+      }
+    },
+    "Tap the More button or Edit, then Select Messages.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diğer (⋯) düğmesine ya da Düzenle'ye, ardından Mesajları Seç'e dokun."
+          }
+        }
+      }
+    },
+    "The button below opens Red Card's page in Settings. Go back once to reach Apps.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aşağıdaki düğme Ayarlar'da Red Card sayfasını açar. Uygulamalar'a ulaşmak için bir kez geri git."
+          }
+        }
+      }
+    },
+    "The filter has no internet access and can't store anything, so your messages never leave your phone.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filtrenin internet erişimi yoktur ve hiçbir şey kaydedemez, yani mesajların telefonundan asla çıkmaz."
+          }
+        }
+      }
+    },
+    "The sender is added to Your rules on this iPhone. You can remove it there at any time.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gönderen bu iPhone'daki Kuralların listesine eklenir. İstediğin zaman oradan kaldırabilirsin."
+          }
+        }
+      }
+    },
+    "Try a message": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mesaj dene"
+          }
+        }
+      }
+    },
+    "Turn on the filter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filtreyi aç"
+          }
+        }
+      }
+    },
+    "Under SMS Filtering, choose Red Card.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SMS Filtreleme altında Red Card'ı seç."
+          }
+        }
+      }
+    },
+    "Unusual link: %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şüpheli link: %@"
+          }
+        }
+      }
+    },
+    "Use a sample bet message": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Örnek bir bet mesajı kullan"
+          }
+        }
+      }
+    },
+    "Use this for a number whose messages were filtered by mistake. Contacts never need adding: iOS doesn't send their messages to filters.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mesajları yanlışlıkla filtrelenen bir numara için bunu kullan. Rehberindeki kişileri eklemene gerek yok: iOS onların mesajlarını filtrelere hiç göndermez."
+          }
+        }
+      }
+    },
+    "Version": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sürüm"
+          }
+        }
+      }
+    },
+    "What Red Card checks": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Red Card neyi kontrol eder"
+          }
+        }
+      }
+    },
+    "What iOS doesn't allow": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iOS'un izin vermedikleri"
+          }
+        }
+      }
+    },
+    "Where filtered messages go": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filtrelenen mesajlar nereye gider"
+          }
+        }
+      }
+    },
+    "Why": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neden"
+          }
+        }
+      }
+    },
+    "Wrong result?": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonuç yanlış mı?"
+          }
+        }
+      }
+    },
+    "Your rules": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kuralların"
+          }
+        }
+      }
+    },
+    "iOS doesn't tell apps whether the filter is on, so Red Card can't show it here. If bet messages reach your inbox again, check that Red Card is still chosen in Settings.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iOS, filtrenin açık olup olmadığını uygulamalara bildirmiyor; bu yüzden Red Card bunu burada gösteremez. Bet mesajları yine gelen kutuna düşerse Ayarlar'da Red Card'ın hâlâ seçili olduğunu kontrol et."
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

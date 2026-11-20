@@ -1,0 +1,51 @@
+import SwiftUI
+import RedCardCore
+
+/// What Red Card does, what it can't do, and how it treats privacy.
+struct AboutView: View {
+    @Environment(SettingsModel.self) private var model
+
+    var body: some View {
+        List {
+            Section("Private by design") {
+                Label("Every message is checked on your iPhone. Red Card has no servers, no account and no tracking.", systemImage: "iphone")
+                Label("The filter has no internet access and can't store anything, so your messages never leave your phone.", systemImage: "lock")
+            }
+
+            Section("What Red Card checks") {
+                Label("SMS and MMS from numbers that aren't in your contacts.", systemImage: "message")
+                Label("It looks for betting words, betting brand names, betting site links, bonus amounts and spelling tricks such as dots between letters.", systemImage: "magnifyingglass")
+            }
+
+            Section("What iOS doesn't allow") {
+                Label("Messages from your contacts and iMessages are never sent to filters.", systemImage: "person.2")
+                Label("Filters can't delete messages or block numbers. Filtered messages wait in Junk, where you can still read them.", systemImage: "tray")
+                Label("Filters can't keep a count, so Red Card can't show how many messages it filtered.", systemImage: "number")
+            }
+
+            Section {
+                Label("Red Card is free, with no ads and no in-app purchases.", systemImage: "gift")
+                if RuleUpdater.rulesURL != nil {
+                    Label("Once a day the app may download an updated list of betting rules. Nothing about you or your messages is sent.", systemImage: "arrow.down.circle")
+                }
+                LabeledContent("Version", value: appVersion)
+                LabeledContent("Rules version") {
+                    Text(model.rules.version, format: .number)
+                }
+            }
+        }
+        .navigationTitle("How Red Card works")
+        .navigationBarTitleDisplayMode(.inline)
+    }
+
+    private var appVersion: String {
+        Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0"
+    }
+}
+
+#Preview {
+    NavigationStack {
+        AboutView()
+    }
+    .environment(SettingsModel(store: SharedStore(suiteName: "preview")))
+}
