@@ -154,8 +154,12 @@ public struct BetClassifier: Sendable {
 
     private func brandSignals(in text: NormalizedText) -> [Signal] {
         var signals: [Signal] = []
+        // Raw words first (they keep digits: "bet365"), then decoded words
+        // that are not just a raw word decoded again, so "Bet1" counts once
+        // and not also as "beti".
+        let decodedRaw = Set(text.rawTokens.map { TextNormalizer.squeeze(TextNormalizer.decodeLeet($0)) })
+        let candidates = text.rawTokens + text.tokens.filter { !decodedRaw.contains($0) }
         var seen: Set<String> = []
-        let candidates = text.rawTokens + text.tokens
 
         for token in candidates where token.count >= 3 && seen.insert(token).inserted {
             guard !rules.stemStoplist.contains(where: token.contains) else { continue }
@@ -217,7 +221,7 @@ public struct BetClassifier: Sendable {
 
     /// `%100`, `500 TL`, `1.000₺`, `250 FS`, `100 freespin`, `x50`.
     private static let amountPattern: NSRegularExpression = {
-        let pattern = #"(%\s?\d{2,3})|(\d{1,3}(?:[.,]\d{3})*\s?(?:tl|₺|try|lira|usd|eur|\$|€))|(\d{1,4}\s?(?:fs|free\s?spin|freespin|spin)\b)|(\bx\d{2,5}\b)"#
+        let pattern = #"(%\s?\d{2,3})|(\d{1,3}(?:[.,]\d{3})*\s?(?:tl|₺|try|lira|usd|eur|\$|€))|(\d{1,4}\s?(?:fs|free\s?spin|freespin|spin|spn)\b)|(\bx\d{2,5}\b)"#
         return try! NSRegularExpression(pattern: pattern, options: [.caseInsensitive])
     }()
 }
@@ -292,8 +296,11 @@ struct CompiledRules: Sendable {
     init(_ rules: RuleSet) {
         terms = rules.terms.map(CompiledTerm.init)
         safeTerms = rules.safeTerms.map(CompiledTerm.init)
-        gamblingStems = rules.gamblingStems.map(TextNormalizer.squeeze)
-        embeddedStems = gamblingStems.filter { $0 != "bet" }
+        // Squeezing can shorten a stem into a common syllable ("iddaa" becomes
+        // "ida", found in "adidas" and "sayıda"), so very short stems are left
+        // out. `bet` is handled separately with its own stoplist.
+        gamblingStems = rules.gamblingStems.map(TextNormalizer.squeeze).filter { $0 == "bet" || $0.count >= 4 }
+        embeddedStems = gamblingStems.filter { $0 != "bet" && $0.count >= 5 }
         stemStoplist = rules.stemStoplist.map(TextNormalizer.squeeze)
         shortenerDomains = Set(rules.shortenerDomains)
         chatInviteDomains = Set(rules.chatInviteDomains)
@@ -350,8 +357,9 @@ struct SenderInfo {
         case .personalNumber: Signal(kind: .personalNumber, detail: raw, points: 10)
         case .foreignNumber: Signal(kind: .foreignNumber, detail: raw, points: 10)
         case .email: Signal(kind: .emailSender, detail: raw, points: 10)
-        // Turkish alphanumeric sender IDs must be registered by a company.
-        case .alphanumeric: Signal(kind: .registeredSender, detail: raw, points: -15)
+        // Company-style sender IDs (ESLEMREKL, TEKSOYESYA …) are now widely
+        // used by bet spammers too, so they earn no trust either way.
+        case .alphanumeric: nil
         case .shortCode, .otherNumber: nil
         }
     }

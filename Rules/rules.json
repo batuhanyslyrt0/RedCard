@@ -141,6 +141,10 @@
       "weight" : -25
     },
     {
+      "term" : "faiz oran",
+      "weight" : -20
+    },
+    {
       "term" : "kargonuz",
       "weight" : -20
     },
@@ -177,7 +181,11 @@
     "qrco.de",
     "u.to",
     "clck.ru",
-    "lnk.bio"
+    "lnk.bio",
+    "dub.mn",
+    "dub.run",
+    "dub.sh",
+    "sshortly.org"
   ],
   "stemStoplist" : [
     "sohbet",
@@ -199,6 +207,7 @@
     "betul",
     "ubeyt",
     "tebessum",
+    "ilelebet",
     "better",
     "between",
     "betray",
@@ -354,6 +363,14 @@
       "weight" : 20
     },
     {
+      "term" : "spn",
+      "weight" : 30
+    },
+    {
+      "term" : "her gole",
+      "weight" : 30
+    },
+    {
       "term" : "slot",
       "weight" : 20
     },
@@ -418,6 +435,18 @@
       "weight" : 45
     },
     {
+      "term" : "casibom",
+      "weight" : 50
+    },
+    {
+      "term" : "casipop",
+      "weight" : 50
+    },
+    {
+      "term" : "levant",
+      "weight" : 30
+    },
+    {
       "term" : "kumarhane",
       "weight" : 45
     },
@@ -467,7 +496,11 @@
     },
     {
       "term" : "oranlar",
-      "weight" : 15
+      "weight" : 10
+    },
+    {
+      "term" : "özel oran",
+      "weight" : 20
     },
     {
       "term" : "kombine",
@@ -488,6 +521,22 @@
     {
       "term" : "limitsiz çekim",
       "weight" : 40
+    },
+    {
+      "term" : "sınırsız çekim",
+      "weight" : 40
+    },
+    {
+      "term" : "çekebilirsin",
+      "weight" : 20
+    },
+    {
+      "term" : "vip temsilci",
+      "weight" : 35
+    },
+    {
+      "term" : "vip hediye",
+      "weight" : 25
     },
     {
       "term" : "çekim limiti",
@@ -611,5 +660,5 @@
     "pol.tr",
     "turkiye.gov.tr"
   ],
-  "version" : 2
+  "version" : 3
 }

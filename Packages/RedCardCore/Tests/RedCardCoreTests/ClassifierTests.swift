@@ -71,6 +71,40 @@ struct ClassifierTests {
         #expect(classifier.classify(body: body, sender: nil).isJunk)
     }
 
+    @Test("Real bet SMS sent under company-style sender IDs", arguments: [
+        ("Bin Lira Hesabinda\nHemen Cekebilirsin.\nFenerbahce macinda her gole bizden 25Spn Hediye\n\nhttps://dub.mn/girisyapege B052", "TEKSOYINSTC"),
+        ("Levantta her gun ozel oran var! Bugunun ozel oranini gormek icin tikla: https://bit.ly/altinorann B052", "TEKSOYMADTC"),
+        ("TEBRIKLER! 5000TL KAZANDINIZ\n27 MILYON TL YILBASI CEKILISI SIZE OZEL VIP HEDIYELER SINIRSIZ CEKIM VE VIP TEMSILCINIZ\nDetaylar: https://t.ly/ovisvip udiS B064", "ERKEKLERHRF"),
+        ("1000TL Ruzgari Ege den esiyor...\nGalatasaray macinda her gole bizden 25Spn Hediye\n10TL Yatir,30Milyon Hemen Cek.\n\nkslt.vip/GirisEge B052", "TEKSOYESYA"),
+        ("Degerli Uyemiz,\n1.000TL bdv Nakt kazndin,hesabna eklendi\n\n1.000TLl lik yatrimina 50Spn ucretsz\n30Milyn cekm\n\n4sms.vip/pusulada ZCeI B064", "MRDINSAT"),
+        ("2.000 TL YATIR, CEVRIMSIZ & CEKIM LIMITSIZ 4.000 TL ILE OYUNA BASLA! KAT KURALSIZ SINIRSIZ KAZANC MOJO'DA SENI BEKLIYOR!\n\nGuncel Giris: ggc.site/MOJO B052", "ESLEMREKL")
+    ])
+    func companyStyleBetSenders(message: String, sender: String) {
+        let verdict = classifier.classify(body: message, sender: sender)
+        #expect(verdict.isJunk, "Score \(verdict.score): \(verdict.signals.map(\.detail))")
+    }
+
+    @Test("Real company adverts that once looked like bet brands", arguments: [
+        ("11.11 İNDİRİMLERİ BAŞLADI! Nike, adidas, New Balance ve daha birçok markada sepette %50'ye varan indirimler seni bekliyor. Link: https://ern.onl/abc", "INTERSPORT"),
+        ("%60'a varan indirime ek 250 TL hediye! Yunan Adalari icin BiletFriday firsati! bilet.com/lnk/E41LRYB SMS ret:strw.me/?n=0", "BILET.COM"),
+        ("Is Plus programinda Lacivert seviyede oldugunuz icin IsCepten yapacaginiz aylik sinirsiz sayida havale isleminizin ucretsiz oldugunu biliyor muydunuz?", "IS BANKASI"),
+        ("Türk milleti ilelebet payidar kalacaktir. 10 Kasım'da saygı ve özlemle anıyoruz.", "I.B.B."),
+        ("%3,48den baslayan faiz oranlari ile Aninda Krediye IsCepten hemen basvurun.", "IS BANKASI"),
+        ("Acele et 5000 TL kupon hesabında! Fırsatı yakala: https://ty.gl/coucat", "TRENDYOL")
+    ])
+    func realCompanyAdverts(message: String, sender: String) {
+        for strictness in Strictness.allCases {
+            let verdict = BetClassifier(settings: FilterSettings(strictness: strictness)).classify(body: message, sender: sender)
+            #expect(!verdict.isJunk, "\(strictness) score \(verdict.score): \(verdict.signals.map(\.detail))")
+        }
+    }
+
+    @Test("A leetspeak word counts as one brand, not two")
+    func leetBrandCountsOnce() {
+        let verdict = classifier.classify(body: "Bet1", sender: nil)
+        #expect(verdict.signals.filter { $0.kind == .gamblingBrand }.count == 1)
+    }
+
     @Test("Foreign sender + money + odd link is treated as an advert")
     func promotionPattern() {
         let verdict = classifier.classify(body: "Sana ozel 5000 TL hediye, hemen al: qwe482.top/x", sender: "+84 1992692779")

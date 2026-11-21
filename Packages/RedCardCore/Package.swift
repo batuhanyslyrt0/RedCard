@@ -14,6 +14,8 @@ let package = Package(
         .target(name: "RedCardCore"),
         // Writes the rules as JSON for publishing:  swift run export-rules
         .executableTarget(name: "export-rules", dependencies: ["RedCardCore"]),
+        // Checks the rules against a file of messages:  swift run classify-messages file.jsonl
+        .executableTarget(name: "classify-messages", dependencies: ["RedCardCore"]),
         .testTarget(name: "RedCardCoreTests", dependencies: ["RedCardCore"])
     ]
 )

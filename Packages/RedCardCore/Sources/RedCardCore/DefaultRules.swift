@@ -7,7 +7,7 @@ extension RuleSet {
     /// They go through the same normalizer as messages, so spelling variants
     /// such as `CEVRIMSIZ`, `Çevrimsiz` or `ç.e.v.r.i.m.s.i.z` all match.
     public static let builtIn = RuleSet(
-        version: 2,
+        version: 3,
         terms: [
             // Bonus offers
             WeightedTerm("deneme bonusu", 60),
@@ -41,6 +41,8 @@ extension RuleSet {
             WeightedTerm("bedava spin", 50),
             WeightedTerm("ücretsiz spin", 50),
             WeightedTerm("spin", 20),
+            WeightedTerm("spn", 30),
+            WeightedTerm("her gole", 30),
             WeightedTerm("slot", 20),
             WeightedTerm("jackpot", 35),
             WeightedTerm("sweet bonanza", 50),
@@ -59,6 +61,10 @@ extension RuleSet {
             WeightedTerm("canlı casino", 50),
             WeightedTerm("online casino", 50),
             WeightedTerm("casino", 45),
+            // Well-known illegal betting brands seen in real messages
+            WeightedTerm("casibom", 50),
+            WeightedTerm("casipop", 50),
+            WeightedTerm("levant", 30),
             WeightedTerm("kumarhane", 45),
             WeightedTerm("kumar", 25),
             WeightedTerm("bahis", 35),
@@ -71,7 +77,8 @@ extension RuleSet {
             WeightedTerm("yüksek oran", 30),
             WeightedTerm("en yüksek oran", 35),
             WeightedTerm("rakipsiz oran", 40),
-            WeightedTerm("oranlar", 15),
+            WeightedTerm("oranlar", 10),
+            WeightedTerm("özel oran", 20),
             WeightedTerm("kombine", 20),
             WeightedTerm("kupon", 10),
 
@@ -79,6 +86,10 @@ extension RuleSet {
             WeightedTerm("anında çekim", 35),
             WeightedTerm("hızlı çekim", 30),
             WeightedTerm("limitsiz çekim", 40),
+            WeightedTerm("sınırsız çekim", 40),
+            WeightedTerm("çekebilirsin", 20),
+            WeightedTerm("vip temsilci", 35),
+            WeightedTerm("vip hediye", 25),
             WeightedTerm("çekim limiti", 25),
             WeightedTerm("ilk yatırım", 35),
             WeightedTerm("para yatır", 20),
@@ -127,6 +138,7 @@ extension RuleSet {
             WeightedTerm("bonusflaş", -35),
             WeightedTerm("bonus trink", -35),
             WeightedTerm("garanti bbva", -25),
+            WeightedTerm("faiz oran", -20),
             // Deliveries and appointments
             WeightedTerm("kargonuz", -20),
             WeightedTerm("siparişiniz", -15),
@@ -137,7 +149,7 @@ extension RuleSet {
             // Turkish words that contain "bet"
             "sohbet", "muhabbet", "rekabet", "nobet", "gurbet", "kurbet", "akibet",
             "musibet", "diyabet", "alfabe", "beton", "betim", "betik", "heybet",
-            "nisbet", "mahabbet", "betul", "ubeyt", "tebessum",
+            "nisbet", "mahabbet", "betul", "ubeyt", "tebessum", "ilelebet",
             // English words that contain "bet"
             "better", "between", "betray", "beta", "alphabet", "abet", "diabet", "bethlehem"
         ],
@@ -145,7 +157,7 @@ extension RuleSet {
             "bit.ly", "t.ly", "tinyurl.com", "cutt.ly", "rb.gy", "is.gd", "v.gd",
             "shorturl.at", "rebrand.ly", "t.co", "goo.gl", "s.id", "tiny.cc",
             "ow.ly", "bl.ink", "shor.by", "urlz.fr", "linktr.ee", "tr.ee", "bitly.ws",
-            "qrco.de", "u.to", "clck.ru", "lnk.bio"
+            "qrco.de", "u.to", "clck.ru", "lnk.bio", "dub.mn", "dub.run", "dub.sh", "sshortly.org"
         ],
         chatInviteDomains: ["t.me", "telegram.me", "wa.me", "chat.whatsapp.com"],
         suspiciousTopLevelDomains: [
