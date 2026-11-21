@@ -114,7 +114,7 @@ private struct VerdictSummary: View {
 
             VStack(alignment: .leading, spacing: 6) {
                 // Two separate Text values, so both strings are localized.
-                (verdict.isJunk ? Text("Goes to Junk") : Text("Stays in your inbox"))
+                (verdict.isJunk ? Text("Goes to Spam") : Text("Stays in your inbox"))
                     .font(Theme.verdictTitle)
 
                 Gauge(value: Double(min(max(verdict.score, 0), verdict.threshold)), in: 0...Double(verdict.threshold)) {

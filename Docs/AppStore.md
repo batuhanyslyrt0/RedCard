@@ -25,13 +25,13 @@ Karakter sınırları Apple'ın sınırlarıdır; hepsi kontrol edildi.
 **Alt başlık** (en fazla 30): `Bahis ve casino SMS'lerine son`
 
 **Tanıtım metni** (en fazla 170):
-> Bet sitelerinden gelen SMS'ler artık bildirim göndermeden Gereksiz klasörüne gider. Ücretsiz, reklamsız ve tamamen telefonunda çalışır.
+> Bet sitelerinden gelen SMS'ler artık bildirim göndermeden İstenmeyen klasörüne gider. Ücretsiz, reklamsız ve tamamen telefonunda çalışır.
 
 **Anahtar kelimeler** (en fazla 100, virgülle):
-`bahis,casino,spam,sms,filtre,engelle,bonus,kumar,gereksiz,mesaj,bet,iddaa,slot,reklam,engelleyici`
+`bahis,casino,spam,sms,filtre,engelle,bonus,kumar,istenmeyen,mesaj,bet,iddaa,slot,reklam,engelleyici`
 
 **Açıklama:**
-> Her gün gelen "deneme bonusu", "çevrimsiz freespin", "güncel giriş adresi" mesajlarından bıktın mı? Red Card bu mesajları tanır ve sessizce Gereksiz klasörüne taşır. Bildirim gelmez, gelen kutun temiz kalır.
+> Her gün gelen "deneme bonusu", "çevrimsiz freespin", "güncel giriş adresi" mesajlarından bıktın mı? Red Card bu mesajları tanır ve sessizce İstenmeyen klasörüne taşır. Bildirim gelmez, gelen kutun temiz kalır.
 >
 > NASIL ÇALIŞIR
 > Red Card, rehberinde olmayan numaralardan gelen SMS'leri Apple'ın SMS filtreleme altyapısıyla kontrol eder. Bahis kelimelerine, bet sitesi adlarına ve linklerine, bonus miktarlarına bakar. Spam gönderenlerin kullandığı hileleri de çözer: harflerin arasına nokta koymak (B.O.N.U.S), harf yerine rakam kullanmak (fr3esp1n), görünmez karakterler veya benzer görünen yabancı harfler.
@@ -56,7 +56,7 @@ Karakter sınırları Apple'ın sınırlarıdır; hepsi kontrol edildi.
 >
 > Tamamen ücretsizdir. Uygulama içi satın alma yoktur.
 >
-> Not: iOS, rehberindeki kişilerden gelen mesajları ve iMessage'ları filtrelere göndermez. Filtreler mesaj silemez; filtrelenen mesajlar Gereksiz klasöründe durur.
+> Not: iOS, rehberindeki kişilerden gelen mesajları ve iMessage'ları filtrelere göndermez. Filtreler mesaj silemez; filtrelenen mesajlar İstenmeyen klasöründe durur.
 
 **Bu sürümdeki yenilikler:**
 > Red Card'ın ilk sürümü.
@@ -68,13 +68,13 @@ Karakter sınırları Apple'ın sınırlarıdır; hepsi kontrol edildi.
 **Subtitle** (max 30): `Keeps gambling texts away`
 
 **Promotional text** (max 170):
-> Texts from betting and casino sites now go straight to Junk, with no notification. Free, no ads, and it all runs on your iPhone.
+> Texts from betting and casino sites now go straight to Spam, with no notification. Free, no ads, and it all runs on your iPhone.
 
 **Keywords** (max 100):
 `betting,casino,gambling,spam,sms,filter,blocker,junk,text,bonus,slots,messages,block`
 
 **Description:**
-> Tired of daily texts offering bonuses, free spins and "new login addresses"? Red Card recognises betting and casino adverts and quietly moves them to Junk. No notification, a clean inbox.
+> Tired of daily texts offering bonuses, free spins and "new login addresses"? Red Card recognises betting and casino adverts and quietly moves them to Spam. No notification, a clean inbox.
 >
 > HOW IT WORKS
 > Red Card checks texts from numbers that aren't in your contacts, using Apple's SMS filtering system. It looks for betting words, betting site names and links, and bonus amounts, and sees through the tricks spammers use: dots between letters (B.O.N.U.S), digits instead of letters (fr3esp1n), invisible characters and look-alike letters from other alphabets.
@@ -99,10 +99,22 @@ Karakter sınırları Apple'ın sınırlarıdır; hepsi kontrol edildi.
 >
 > Completely free, with no in-app purchases.
 >
-> Note: iOS never sends messages from your contacts or iMessages to filters. Filters can't delete messages; filtered messages stay in Junk.
+> Note: iOS never sends messages from your contacts or iMessages to filters. Filters can't delete messages; filtered messages stay in Spam.
 
 **What's new:**
 > The first version of Red Card.
+
+## Bu sürümdeki yenilikler (What's New) — 1.0.1
+
+Türkçe:
+> • Metinler iOS'un güncel adlarına uyarlandı: filtrelenen mesajlar Mesajlar'daki "İstenmeyen" listesine gider.
+> • Kurulum rehberi yeni ayar adlarını gösteriyor (Bilinmeyen ve İstenmeyen › Mesaj Filtresi).
+> • Bildirirken Red Card çıkmıyorsa nasıl açılacağı eklendi (Telefon › SMS/Arama Raporu).
+
+English:
+> • Wording now matches current iOS: filtered texts go to the "Spam" list in Messages.
+> • The setup guide shows the new setting names (Unknown & Spam › Text Message Filter).
+> • Explains how to turn on reporting if Red Card isn't offered (Phone › SMS/Call Reporting).
 
 ## Uygulama gizliliği (App Privacy)
 
@@ -120,9 +132,9 @@ Kural dosyasını indirmek veri toplama sayılmaz, uygulama o sırada hiçbir ve
 
 ## İnceleme ekibi için not (App Review Information)
 
-> Red Card is an SMS filter (Message Filter Extension). To test it: Settings › Apps › Messages › Unknown & Spam › SMS Filtering › choose Red Card. Then send an SMS from a number that is not in the device's contacts, for example: "Deneme bonusu 500 TL, guncel giris: bit.ly/abc". It is moved to Messages › Filters › Junk.
+> Red Card is an SMS filter (Message Filter Extension). To test it: Settings › Apps › Messages › Unknown & Spam › Text Message Filter › choose Red Card. Then send an SMS from a number that is not in the device's contacts, for example: "Deneme bonusu 500 TL, guncel giris: bit.ly/abc". It is moved to the Spam list in Messages (filter button › Spam).
 > The "Try a message" screen in the app shows the same classification without sending an SMS (tap "Use a sample bet message").
-> The filter runs entirely on the device and has no network access; a small bundled Core ML text model also runs on the device. The only data that leaves the device is a message the user chooses to report from Messages (Report Junk › Red Card): the message text, the kind of sender and the app's own score are sent to https://redcard.batudev.com/api/report. No phone numbers or identifiers are sent.
+> The filter runs entirely on the device and has no network access; a small bundled Core ML text model also runs on the device. The only data that leaves the device is a message the user chooses to report from Messages (Report Spam › Red Card): the message text, the kind of sender and the app's own score are sent to https://redcard.batudev.com/api/report. No phone numbers or identifiers are sent.
 
 Giriş bilgisi gerekmez (uygulamada hesap yok).
 

@@ -45,4 +45,14 @@ for lang in tr en; do
 done
 
 xcrun simctl status_bar "$DEVICE" clear
+
+# App Store Connect asks for 6.1"/6.3" screenshots (1206x2622); JPEG has no alpha.
+for lang in tr en; do
+  mkdir -p "Docs/AppStore/Screenshots-6.3in/$lang"
+  for f in "$OUT/$lang"/*.png; do
+    name=$(basename "$f" .png)
+    sips -z 2622 1206 -s format jpeg -s formatOptions 95 "$f" \
+      --out "Docs/AppStore/Screenshots-6.3in/$lang/$lang-$name-1206x2622.jpg" >/dev/null
+  done
+done
 echo "Done."

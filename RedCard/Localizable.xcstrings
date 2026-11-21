@@ -51,12 +51,12 @@
         }
       }
     },
-    "Also catches messages with only a few betting signs. A normal message may occasionally end up in Junk.": {
+    "Also catches messages with only a few betting signs. A normal message may occasionally end up in Spam.": {
       "localizations": {
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Az sayıda bahis işareti taşıyan mesajları da yakalar. Ara sıra normal bir mesaj Gereksiz'e düşebilir."
+            "value": "Az sayıda bahis işareti taşıyan mesajları da yakalar. Ara sıra normal bir mesaj İstenmeyen'e düşebilir."
           }
         }
       }
@@ -91,12 +91,12 @@
         }
       }
     },
-    "Any message containing one of these goes to Junk. Spelling tricks such as dots between letters are caught too.": {
+    "Any message containing one of these goes to Spam. Spelling tricks such as dots between letters are caught too.": {
       "localizations": {
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Bunlardan birini içeren her mesaj Gereksiz'e gider. Harflerin arasına nokta koymak gibi yazım hileleri de yakalanır."
+            "value": "Bunlardan birini içeren her mesaj İstenmeyen'e gider. Harflerin arasına nokta koymak gibi yazım hileleri de yakalanır."
           }
         }
       }
@@ -211,12 +211,12 @@
         }
       }
     },
-    "Filters can't delete messages or block numbers. Filtered messages wait in Junk, where you can still read them.": {
+    "Filters can't delete messages or block numbers. Filtered messages wait in Spam, where you can still read them.": {
       "localizations": {
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Filtreler mesaj silemez ve numara engelleyemez. Filtrelenen mesajlar Gereksiz klasöründe bekler, istersen yine okuyabilirsin."
+            "value": "Filtreler mesaj silemez ve numara engelleyemez. Filtrelenen mesajlar İstenmeyen klasöründe bekler, istersen yine okuyabilirsin."
           }
         }
       }
@@ -251,12 +251,12 @@
         }
       }
     },
-    "Goes to Junk": {
+    "Goes to Spam": {
       "localizations": {
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Gereksiz'e gider"
+            "value": "İstenmeyen'e gider"
           }
         }
       }
@@ -291,22 +291,32 @@
         }
       }
     },
-    "In Messages, report the message as junk and choose Red Card. It helps the filter learn new bet messages for everyone.": {
+    "If Red Card isn't offered when you report, turn it on once: Settings › Apps › Phone › SMS/Call Reporting › Red Card.": {
       "localizations": {
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mesajlar'da mesajı gereksiz olarak bildir ve Red Card'ı seç. Bu, filtrenin yeni bet mesajlarını herkes için öğrenmesine yardım eder."
+            "value": "Bildirirken Red Card çıkmıyorsa bir kez açman yeterli: Ayarlar › Uygulamalar › Telefon › SMS/Arama Raporu › Red Card."
           }
         }
       }
     },
-    "In Messages, tap Filters at the top left, then Junk. Filtered messages wait there without a notification.": {
+    "In Messages, report the message as spam and choose Red Card. It helps the filter learn new bet messages for everyone.": {
       "localizations": {
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mesajlar'da sol üstteki Filtreler'e, ardından Gereksiz'e dokun. Filtrelenen mesajlar orada bildirim göndermeden bekler."
+            "value": "Mesajlar'da mesajı İstenmeyen Olarak Bildir ve Red Card'ı seç. Bu, filtrenin yeni bet mesajlarını herkes için öğrenmesine yardım eder."
+          }
+        }
+      }
+    },
+    "In Messages, tap the filter button at the top of the list, then Spam. Filtered messages wait there without a notification.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mesajlar'da listenin üstündeki filtre düğmesine, ardından İstenmeyen'e dokun. Filtrelenen mesajlar orada bildirim göndermeden bekler."
           }
         }
       }
@@ -521,12 +531,12 @@
         }
       }
     },
-    "Only messages that are clearly betting adverts go to Junk. Choose this if a normal message was ever filtered by mistake.": {
+    "Only messages that are clearly betting adverts go to Spam. Choose this if a normal message was ever filtered by mistake.": {
       "localizations": {
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Sadece açıkça bahis reklamı olan mesajlar Gereksiz'e gider. Normal bir mesaj yanlışlıkla filtrelendiyse bunu seç."
+            "value": "Sadece açıkça bahis reklamı olan mesajlar İstenmeyen'e gider. Normal bir mesaj yanlışlıkla filtrelendiyse bunu seç."
           }
         }
       }
@@ -541,12 +551,12 @@
         }
       }
     },
-    "Open Messages, tap Filters at the top left and choose Unknown Senders.": {
+    "Open Messages, tap the filter button at the top of the list and choose Unknown Senders.": {
       "localizations": {
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mesajlar'ı aç, sol üstteki Filtreler'e dokun ve Bilinmeyen Gönderenler'i seç."
+            "value": "Mesajlar'ı aç, listenin üstündeki filtre düğmesine dokun ve Bilinmeyen Gönderenler'i seç."
           }
         }
       }
@@ -631,12 +641,12 @@
         }
       }
     },
-    "Red Card checks texts from unknown senders on your iPhone and moves betting and casino adverts to Junk.": {
+    "Red Card checks texts from unknown senders on your iPhone and moves betting and casino adverts to Spam.": {
       "localizations": {
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Red Card, bilinmeyen numaralardan gelen SMS'leri iPhone'unda kontrol eder ve bahis ile casino reklamlarını Gereksiz klasörüne taşır."
+            "value": "Red Card, bilinmeyen numaralardan gelen SMS'leri iPhone'unda kontrol eder ve bahis ile casino reklamlarını İstenmeyen klasörüne taşır."
           }
         }
       }
@@ -826,7 +836,7 @@
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Bilinmeyen ve Gereksiz'e dokun."
+            "value": "Bilinmeyen ve İstenmeyen'e dokun."
           }
         }
       }
@@ -911,12 +921,12 @@
         }
       }
     },
-    "Under SMS Filtering, choose Red Card.": {
+    "Under Text Message Filter, choose Red Card.": {
       "localizations": {
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "SMS Filtreleme altında Red Card'ı seç."
+            "value": "Mesaj Filtresi altında Red Card'ı seç."
           }
         }
       }

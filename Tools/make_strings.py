@@ -19,8 +19,8 @@ TR = {
     "Clean up old messages": "Eski mesajları temizle",
     "How Red Card works": "Red Card nasıl çalışır",
     "Bet messages stay out of your inbox.": "Bet mesajları artık gelen kutuna düşmez.",
-    "Red Card checks texts from unknown senders on your iPhone and moves betting and casino adverts to Junk.":
-        "Red Card, bilinmeyen numaralardan gelen SMS'leri iPhone'unda kontrol eder ve bahis ile casino reklamlarını Gereksiz klasörüne taşır.",
+    "Red Card checks texts from unknown senders on your iPhone and moves betting and casino adverts to Spam.":
+        "Red Card, bilinmeyen numaralardan gelen SMS'leri iPhone'unda kontrol eder ve bahis ile casino reklamlarını İstenmeyen klasörüne taşır.",
     "iOS doesn't tell apps whether the filter is on, so Red Card can't show it here. If bet messages reach your inbox again, check that Red Card is still chosen in Settings.":
         "iOS, filtrenin açık olup olmadığını uygulamalara bildirmiyor; bu yüzden Red Card bunu burada gösteremez. Bet mesajları yine gelen kutuna düşerse Ayarlar'da Red Card'ın hâlâ seçili olduğunu kontrol et.",
     "Check in Settings": "Ayarlar'da kontrol et",
@@ -28,25 +28,27 @@ TR = {
     "Relaxed": "Rahat",
     "Balanced": "Dengeli",
     "Strict": "Sıkı",
-    "Only messages that are clearly betting adverts go to Junk. Choose this if a normal message was ever filtered by mistake.":
-        "Sadece açıkça bahis reklamı olan mesajlar Gereksiz'e gider. Normal bir mesaj yanlışlıkla filtrelendiyse bunu seç.",
+    "Only messages that are clearly betting adverts go to Spam. Choose this if a normal message was ever filtered by mistake.":
+        "Sadece açıkça bahis reklamı olan mesajlar İstenmeyen'e gider. Normal bir mesaj yanlışlıkla filtrelendiyse bunu seç.",
     "Recommended. Catches almost every bet message while leaving bank, cargo and code messages alone.":
         "Önerilen. Bet mesajlarının neredeyse hepsini yakalar; banka, kargo ve doğrulama kodu mesajlarına dokunmaz.",
-    "Also catches messages with only a few betting signs. A normal message may occasionally end up in Junk.":
-        "Az sayıda bahis işareti taşıyan mesajları da yakalar. Ara sıra normal bir mesaj Gereksiz'e düşebilir.",
+    "Also catches messages with only a few betting signs. A normal message may occasionally end up in Spam.":
+        "Az sayıda bahis işareti taşıyan mesajları da yakalar. Ara sıra normal bir mesaj İstenmeyen'e düşebilir.",
 
     # Setup
     "Open the Settings app.": "Ayarlar uygulamasını aç.",
     "Scroll down and tap Apps, then Messages.": "Aşağı kaydır, Uygulamalar'a ve ardından Mesajlar'a dokun.",
-    "Tap Unknown & Spam.": "Bilinmeyen ve Gereksiz'e dokun.",
-    "Under SMS Filtering, choose Red Card.": "SMS Filtreleme altında Red Card'ı seç.",
+    "Tap Unknown & Spam.":
+        "Bilinmeyen ve İstenmeyen'e dokun.",
+    "Under Text Message Filter, choose Red Card.":
+        "Mesaj Filtresi altında Red Card'ı seç.",
     "Four steps in Settings": "Ayarlar'da dört adım",
     "The button below opens Red Card's page in Settings. Go back once to reach Apps.":
         "Aşağıdaki düğme Ayarlar'da Red Card sayfasını açar. Uygulamalar'a ulaşmak için bir kez geri git.",
     "Open Settings": "Ayarlar'ı aç",
     "Where filtered messages go": "Filtrelenen mesajlar nereye gider",
-    "In Messages, tap Filters at the top left, then Junk. Filtered messages wait there without a notification.":
-        "Mesajlar'da sol üstteki Filtreler'e, ardından Gereksiz'e dokun. Filtrelenen mesajlar orada bildirim göndermeden bekler.",
+    "In Messages, tap the filter button at the top of the list, then Spam. Filtered messages wait there without a notification.":
+        "Mesajlar'da listenin üstündeki filtre düğmesine, ardından İstenmeyen'e dokun. Filtrelenen mesajlar orada bildirim göndermeden bekler.",
     "Messages from your contacts are never checked or filtered.":
         "Rehberindeki kişilerden gelen mesajlar asla kontrol edilmez ve filtrelenmez.",
     "Close": "Kapat",
@@ -60,7 +62,8 @@ TR = {
         "Örneğin +90 532 123 45 67. Gönderen biraz yardımcı olur ama asıl önemli olan mesajın metni.",
     "Why": "Neden",
     "Use a sample bet message": "Örnek bir bet mesajı kullan",
-    "Goes to Junk": "Gereksiz'e gider",
+    "Goes to Spam":
+        "İstenmeyen'e gider",
     "Stays in your inbox": "Gelen kutunda kalır",
     "Score": "Puan",
     "Score %lld, filtered from %lld": "Puan %1$lld, filtre sınırı %2$lld",
@@ -96,8 +99,8 @@ TR = {
     "Never filter these senders": "Bu gönderenleri asla filtreleme",
     "Add a word or phrase": "Kelime veya ifade ekle",
     "Add a phone number": "Telefon numarası ekle",
-    "Any message containing one of these goes to Junk. Spelling tricks such as dots between letters are caught too.":
-        "Bunlardan birini içeren her mesaj Gereksiz'e gider. Harflerin arasına nokta koymak gibi yazım hileleri de yakalanır.",
+    "Any message containing one of these goes to Spam. Spelling tricks such as dots between letters are caught too.":
+        "Bunlardan birini içeren her mesaj İstenmeyen'e gider. Harflerin arasına nokta koymak gibi yazım hileleri de yakalanır.",
     "Numbers match in any format: 0532…, +90 532… and 532… are the same.":
         "Numaralar her biçimde eşleşir: 0532…, +90 532… ve 532… aynı kabul edilir.",
     "Messages containing one of these are never filtered, even if they look like betting.":
@@ -120,8 +123,8 @@ TR = {
     "Hundreds of conversations can be selected and deleted at once this way.":
         "Bu yolla yüzlerce sohbeti tek seferde seçip silebilirsin.",
     "On iPhone": "iPhone'da",
-    "Open Messages, tap Filters at the top left and choose Unknown Senders.":
-        "Mesajlar'ı aç, sol üstteki Filtreler'e dokun ve Bilinmeyen Gönderenler'i seç.",
+    "Open Messages, tap the filter button at the top of the list and choose Unknown Senders.":
+        "Mesajlar'ı aç, listenin üstündeki filtre düğmesine dokun ve Bilinmeyen Gönderenler'i seç.",
     "Tap the More button or Edit, then Select Messages.":
         "Diğer (⋯) düğmesine ya da Düzenle'ye, ardından Mesajları Seç'e dokun.",
     "Tap each bet conversation, then tap Delete.": "Her bet sohbetine dokun, ardından Sil'e dokun.",
@@ -134,8 +137,10 @@ TR = {
         "Tek istisna, Mesajlar'dan kendin bildirdiğin bir mesajdır: o zaman mesajın metni Red Card'a gönderilir; senin numaran ve gönderenin numarası gönderilmez.",
     "Privacy policy": "Gizlilik politikası",
     "Missed a bet message?": "Kaçan bir bet mesajı mı var?",
-    "In Messages, report the message as junk and choose Red Card. It helps the filter learn new bet messages for everyone.":
-        "Mesajlar'da mesajı gereksiz olarak bildir ve Red Card'ı seç. Bu, filtrenin yeni bet mesajlarını herkes için öğrenmesine yardım eder.",
+    "In Messages, report the message as spam and choose Red Card. It helps the filter learn new bet messages for everyone.":
+        "Mesajlar'da mesajı İstenmeyen Olarak Bildir ve Red Card'ı seç. Bu, filtrenin yeni bet mesajlarını herkes için öğrenmesine yardım eder.",
+    "If Red Card isn't offered when you report, turn it on once: Settings › Apps › Phone › SMS/Call Reporting › Red Card.":
+        "Bildirirken Red Card çıkmıyorsa bir kez açman yeterli: Ayarlar › Uygulamalar › Telefon › SMS/Arama Raporu › Red Card.",
     "The filter has no internet access and can't store anything, so your messages never leave your phone.":
         "Filtrenin internet erişimi yoktur ve hiçbir şey kaydedemez, yani mesajların telefonundan asla çıkmaz.",
     "What Red Card checks": "Red Card neyi kontrol eder",
@@ -146,8 +151,8 @@ TR = {
     "What iOS doesn't allow": "iOS'un izin vermedikleri",
     "Messages from your contacts and iMessages are never sent to filters.":
         "Rehberindeki kişilerden gelen mesajlar ve iMessage'lar filtrelere hiç gönderilmez.",
-    "Filters can't delete messages or block numbers. Filtered messages wait in Junk, where you can still read them.":
-        "Filtreler mesaj silemez ve numara engelleyemez. Filtrelenen mesajlar Gereksiz klasöründe bekler, istersen yine okuyabilirsin.",
+    "Filters can't delete messages or block numbers. Filtered messages wait in Spam, where you can still read them.":
+        "Filtreler mesaj silemez ve numara engelleyemez. Filtrelenen mesajlar İstenmeyen klasöründe bekler, istersen yine okuyabilirsin.",
     "Filters can't keep a count, so Red Card can't show how many messages it filtered.":
         "Filtreler sayım tutamaz, bu yüzden Red Card kaç mesaj filtrelediğini gösteremez.",
     "Red Card is free, with no ads and no in-app purchases.":

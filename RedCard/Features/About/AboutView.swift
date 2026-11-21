@@ -17,7 +17,8 @@ struct AboutView: View {
             }
 
             Section("Missed a bet message?") {
-                Label("In Messages, report the message as junk and choose Red Card. It helps the filter learn new bet messages for everyone.", systemImage: "arrowshape.turn.up.right")
+                Label("In Messages, report the message as spam and choose Red Card. It helps the filter learn new bet messages for everyone.", systemImage: "arrowshape.turn.up.right")
+                Label("If Red Card isn't offered when you report, turn it on once: Settings › Apps › Phone › SMS/Call Reporting › Red Card.", systemImage: "gearshape")
             }
 
             Section("What Red Card checks") {
@@ -28,7 +29,7 @@ struct AboutView: View {
 
             Section("What iOS doesn't allow") {
                 Label("Messages from your contacts and iMessages are never sent to filters.", systemImage: "person.2")
-                Label("Filters can't delete messages or block numbers. Filtered messages wait in Junk, where you can still read them.", systemImage: "tray")
+                Label("Filters can't delete messages or block numbers. Filtered messages wait in Spam, where you can still read them.", systemImage: "tray")
                 Label("Filters can't keep a count, so Red Card can't show how many messages it filtered.", systemImage: "number")
             }
 

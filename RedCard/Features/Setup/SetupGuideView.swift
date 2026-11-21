@@ -17,7 +17,7 @@ struct SetupGuideView: View {
                     SetupStep(number: 1, text: "Open the Settings app.")
                     SetupStep(number: 2, text: "Scroll down and tap Apps, then Messages.")
                     SetupStep(number: 3, text: "Tap Unknown & Spam.")
-                    SetupStep(number: 4, text: "Under SMS Filtering, choose Red Card.")
+                    SetupStep(number: 4, text: "Under Text Message Filter, choose Red Card.")
                 } header: {
                     Text("Four steps in Settings")
                 } footer: {
@@ -29,7 +29,7 @@ struct SetupGuideView: View {
                 }
 
                 Section("Where filtered messages go") {
-                    Label("In Messages, tap Filters at the top left, then Junk. Filtered messages wait there without a notification.", systemImage: "tray")
+                    Label("In Messages, tap the filter button at the top of the list, then Spam. Filtered messages wait there without a notification.", systemImage: "tray")
                     Label("Messages from your contacts are never checked or filtered.", systemImage: "person.crop.circle.badge.checkmark")
                 }
             }

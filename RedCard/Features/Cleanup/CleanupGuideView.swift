@@ -23,7 +23,7 @@ struct CleanupGuideView: View {
             }
 
             Section("On iPhone") {
-                GuideStep(number: 1, text: "Open Messages, tap Filters at the top left and choose Unknown Senders.")
+                GuideStep(number: 1, text: "Open Messages, tap the filter button at the top of the list and choose Unknown Senders.")
                 GuideStep(number: 2, text: "Tap the More button or Edit, then Select Messages.")
                 GuideStep(number: 3, text: "Tap each bet conversation, then tap Delete.")
             }

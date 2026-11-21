@@ -86,7 +86,7 @@ extension RuleList {
 
     var footer: LocalizedStringResource {
         switch self {
-        case .blockedWords: "Any message containing one of these goes to Junk. Spelling tricks such as dots between letters are caught too."
+        case .blockedWords: "Any message containing one of these goes to Spam. Spelling tricks such as dots between letters are caught too."
         case .blockedSenders: "Numbers match in any format: 0532…, +90 532… and 532… are the same."
         case .allowedWords: "Messages containing one of these are never filtered, even if they look like betting."
         case .allowedSenders: "Use this for a number whose messages were filtered by mistake. Contacts never need adding: iOS doesn't send their messages to filters."

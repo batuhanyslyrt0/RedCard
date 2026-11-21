@@ -1,6 +1,6 @@
 # Red Card
 
-Türkçe bet / casino SMS'lerini **Gereksiz** klasörüne taşıyan ücretsiz, açık kaynak bir iPhone uygulaması.
+Türkçe bet / casino SMS'lerini **İstenmeyen** klasörüne taşıyan ücretsiz, açık kaynak bir iPhone uygulaması.
 Filtre tamamen telefonda çalışır: internet yok, kayıt yok. Telefondan çıkan tek şey, kullanıcının
 Mesajlar'dan **kendisinin bildirdiği** kaçan bir mesajın metnidir (numara ve kimlik bilgisi olmadan).
 
@@ -25,7 +25,7 @@ Mesajlar'dan **kendisinin bildirdiği** kaçan bir mesajın metnidir (numara ve 
    geliştirici hesabını seç (şu an `CUW625DYY8`).
 3. iPhone'u bağla (Geliştirici Modu açık olmalı), cihazı seç ve ▶︎ ile çalıştır.
    SMS filtresi simülatörde test edilemez.
-4. Telefonda: **Ayarlar › Uygulamalar › Mesajlar › Bilinmeyen ve Gereksiz › SMS Filtreleme › Red Card**.
+4. Telefonda: **Ayarlar › Uygulamalar › Mesajlar › Bilinmeyen ve İstenmeyen › Mesaj Filtresi › Red Card**.
 
 > Bundle ID (`com.batuhan.redcard`) değişirse App Group'u (`group.com.batuhan.redcard`) üç entitlement dosyasında ve
 > `SharedStore.swift`'te, Apple doğrulama dosyasındaki uygulama kimliklerini de `Server/public/.well-known/` altında güncelle.

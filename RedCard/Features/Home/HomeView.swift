@@ -94,7 +94,7 @@ private struct HomeHeader: View {
                 Text("Bet messages stay out of your inbox.")
                     .font(Theme.headline)
 
-                Text("Red Card checks texts from unknown senders on your iPhone and moves betting and casino adverts to Junk.")
+                Text("Red Card checks texts from unknown senders on your iPhone and moves betting and casino adverts to Spam.")
                     .foregroundStyle(.secondary)
             }
 
@@ -134,9 +134,9 @@ extension Strictness {
 
     var explanation: LocalizedStringResource {
         switch self {
-        case .relaxed: "Only messages that are clearly betting adverts go to Junk. Choose this if a normal message was ever filtered by mistake."
+        case .relaxed: "Only messages that are clearly betting adverts go to Spam. Choose this if a normal message was ever filtered by mistake."
         case .balanced: "Recommended. Catches almost every bet message while leaving bank, cargo and code messages alone."
-        case .strict: "Also catches messages with only a few betting signs. A normal message may occasionally end up in Junk."
+        case .strict: "Also catches messages with only a few betting signs. A normal message may occasionally end up in Spam."
         }
     }
 }
