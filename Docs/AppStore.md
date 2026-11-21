@@ -134,7 +134,7 @@ Kural dosyasını indirmek veri toplama sayılmaz, uygulama o sırada hiçbir ve
 
 > Red Card is an SMS filter (Message Filter Extension). To test it: Settings › Apps › Messages › Unknown & Spam › Text Message Filter › choose Red Card. Then send an SMS from a number that is not in the device's contacts, for example: "Deneme bonusu 500 TL, guncel giris: bit.ly/abc". It is moved to the Spam list in Messages (filter button › Spam).
 > The "Try a message" screen in the app shows the same classification without sending an SMS (tap "Use a sample bet message").
-> The filter runs entirely on the device and has no network access; a small bundled Core ML text model also runs on the device. The only data that leaves the device is a message the user chooses to report from Messages (Report Spam › Red Card): the message text, the kind of sender and the app's own score are sent to https://redcard.batudev.com/api/report. No phone numbers or identifiers are sent.
+> The filter runs entirely on the device and has no network access; a small bundled Core ML text model also runs on the device. The only data that leaves the device is a message the user chooses to report from Messages (Report Spam › Red Card; enabled in Settings › Apps › Phone › SMS/Call Reporting): the message text, the kind of sender and the app's own score are sent to https://redcard.batudev.com/api/report. No phone numbers or identifiers are sent.
 
 Giriş bilgisi gerekmez (uygulamada hesap yok).
 
