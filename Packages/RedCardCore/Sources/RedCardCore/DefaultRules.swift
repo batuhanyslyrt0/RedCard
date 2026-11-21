@@ -7,7 +7,7 @@ extension RuleSet {
     /// They go through the same normalizer as messages, so spelling variants
     /// such as `CEVRIMSIZ`, `Çevrimsiz` or `ç.e.v.r.i.m.s.i.z` all match.
     public static let builtIn = RuleSet(
-        version: 3,
+        version: 4,
         terms: [
             // Bonus offers
             WeightedTerm("deneme bonusu", 60),
@@ -139,6 +139,12 @@ extension RuleSet {
             WeightedTerm("bonus trink", -35),
             WeightedTerm("garanti bbva", -25),
             WeightedTerm("faiz oran", -20),
+            // Banks and payment apps warning people about illegal betting
+            WeightedTerm("yasa dışı bahis", -70),
+            WeightedTerm("yasadışı bahis", -70),
+            WeightedTerm("kullandırmayınız", -30),
+            WeightedTerm("üçüncü kişilere", -20),
+            WeightedTerm("terörün finansmanı", -40),
             // Deliveries and appointments
             WeightedTerm("kargonuz", -20),
             WeightedTerm("siparişiniz", -15),

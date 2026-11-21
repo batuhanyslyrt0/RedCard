@@ -16,6 +16,8 @@ public struct Signal: Sendable, Hashable, Identifiable {
         case moneyAmount
         /// Foreign or email sender + money amount + unusual link.
         case promotionPattern
+        /// The on-device text model thinks this is a bet advert.
+        case modelScore
         case personalNumber
         case foreignNumber
         case emailSender
@@ -63,10 +65,14 @@ public struct BetClassifier: Sendable {
     private let settings: FilterSettings
     private let userBlockedWords: [CompiledTerm]
     private let userAllowedWords: [CompiledTerm]
+    private let model: BetTextModel?
 
-    public init(rules: RuleSet = .builtIn, settings: FilterSettings = FilterSettings()) {
+    /// - Parameter model: the on-device text model; pass `nil` to use the rules only.
+    public init(rules: RuleSet = .builtIn, settings: FilterSettings = FilterSettings(),
+                model: BetTextModel? = .shared) {
         self.rules = rules == .builtIn ? CompiledRules.builtIn : CompiledRules(rules)
         self.settings = settings
+        self.model = model
         self.userBlockedWords = settings.userRules.blockedWords.compactMap(CompiledTerm.init(text:))
         self.userAllowedWords = settings.userRules.allowedWords.compactMap(CompiledTerm.init(text:))
     }
@@ -115,12 +121,25 @@ public struct BetClassifier: Sendable {
             signals.append(Signal(kind: .promotionPattern, detail: "", points: 25))
         }
 
+        // Only a confident model counts as evidence on its own; a lower score
+        // can add to other betting signs but never starts a case by itself.
+        var modelSignal: Signal?
+        if let probability = model?.betProbability(for: body), let points = Self.modelPoints(for: probability) {
+            modelSignal = Signal(kind: .modelScore, detail: String(Int((probability * 100).rounded())), points: points)
+        }
+        if let modelSignal, modelSignal.points >= 50 {
+            signals.append(modelSignal)
+        }
+
         let hasGamblingEvidence = signals.contains { $0.points > 0 }
         guard hasGamblingEvidence else {
             return Verdict(decision: .allow, score: 0, threshold: threshold, signals: [])
         }
 
         // 3. Supporting evidence and legitimate context.
+        if let modelSignal, modelSignal.points < 50 {
+            signals.append(modelSignal)
+        }
         signals += linkSignals.filter { $0.kind != .gamblingLink }
         if let amount {
             signals.append(Signal(kind: .moneyAmount, detail: amount, points: 10))
@@ -135,6 +154,20 @@ public struct BetClassifier: Sendable {
         let score = signals.reduce(0) { $0 + $1.points }
         return Verdict(decision: score >= threshold ? .junk : .allow,
                        score: score, threshold: threshold, signals: signals)
+    }
+
+    // MARK: - Model
+
+    /// Points for the model's opinion. Measured on held-out real messages,
+    /// 90 % and above flagged no normal message, so it can decide on its own
+    /// at the balanced setting; lower confidence only supports other evidence.
+    static func modelPoints(for probability: Double) -> Int? {
+        switch probability {
+        case 0.9...: 50
+        case 0.8..<0.9: 35
+        case 0.7..<0.8: 20
+        default: nil
+        }
     }
 
     // MARK: - Terms

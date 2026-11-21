@@ -11,7 +11,11 @@ let package = Package(
         .library(name: "RedCardCore", targets: ["RedCardCore"])
     ],
     targets: [
-        .target(name: "RedCardCore"),
+        .target(
+            name: "RedCardCore",
+            // Compiled Create ML model (Tools/TrainBetModel.swift)
+            resources: [.copy("Resources/BetTextModel.mlmodelc")]
+        ),
         // Writes the rules as JSON for publishing:  swift run export-rules
         .executableTarget(name: "export-rules", dependencies: ["RedCardCore"]),
         // Checks the rules against a file of messages:  swift run classify-messages file.jsonl

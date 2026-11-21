@@ -23,6 +23,7 @@ struct AboutView: View {
             Section("What Red Card checks") {
                 Label("SMS and MMS from numbers that aren't in your contacts.", systemImage: "message")
                 Label("It looks for betting words, betting brand names, betting site links, bonus amounts and spelling tricks such as dots between letters.", systemImage: "magnifyingglass")
+                Label("A small AI model, trained on thousands of real bet and normal messages, gives a second opinion. It runs on your iPhone; nothing is sent.", systemImage: "sparkles")
             }
 
             Section("What iOS doesn't allow") {

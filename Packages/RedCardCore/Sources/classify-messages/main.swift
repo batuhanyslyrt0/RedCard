@@ -22,6 +22,8 @@ for line in contents.split(separator: "\n") {
     object["decision"] = verdict.isJunk ? "junk" : "allow"
     object["score"] = verdict.score
     object["signals"] = verdict.signals.map { "\($0.kind.rawValue):\($0.detail):\($0.points)" }
+    // The text exactly as the on-device model sees it.
+    object["normalized"] = BetTextModelInput.text(for: body)
     if let data = try? JSONSerialization.data(withJSONObject: object, options: [.sortedKeys, .withoutEscapingSlashes]) {
         FileHandle.standardOutput.write(data)
         FileHandle.standardOutput.write(Data("\n".utf8))

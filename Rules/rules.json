@@ -145,6 +145,26 @@
       "weight" : -20
     },
     {
+      "term" : "yasa dışı bahis",
+      "weight" : -70
+    },
+    {
+      "term" : "yasadışı bahis",
+      "weight" : -70
+    },
+    {
+      "term" : "kullandırmayınız",
+      "weight" : -30
+    },
+    {
+      "term" : "üçüncü kişilere",
+      "weight" : -20
+    },
+    {
+      "term" : "terörün finansmanı",
+      "weight" : -40
+    },
+    {
       "term" : "kargonuz",
       "weight" : -20
     },
@@ -660,5 +680,5 @@
     "pol.tr",
     "turkiye.gov.tr"
   ],
-  "version" : 3
+  "version" : 4
 }

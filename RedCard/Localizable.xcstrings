@@ -1,6 +1,16 @@
 {
   "sourceLanguage": "en",
   "strings": {
+    "A small AI model, trained on thousands of real bet and normal messages, gives a second opinion. It runs on your iPhone; nothing is sent.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Binlerce gerçek bet ve normal mesajla eğitilmiş küçük bir yapay zekâ modeli ikinci bir görüş verir. iPhone'unda çalışır; hiçbir şey gönderilmez."
+          }
+        }
+      }
+    },
     "Add": {
       "localizations": {
         "tr": {
@@ -487,6 +497,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "iPhone'unda iCloud'da Mesajlar'ın açık olduğundan emin ol: Ayarlar › adın › iCloud › Mesajlar."
+          }
+        }
+      }
+    },
+    "On-device AI score: %@ / 100": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Telefondaki yapay zekâ puanı: %@ / 100"
           }
         }
       }
