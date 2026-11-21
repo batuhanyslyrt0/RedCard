@@ -36,13 +36,16 @@ Karakter sınırları Apple'ın sınırlarıdır; hepsi kontrol edildi.
 > NASIL ÇALIŞIR
 > Red Card, rehberinde olmayan numaralardan gelen SMS'leri Apple'ın SMS filtreleme altyapısıyla kontrol eder. Bahis kelimelerine, bet sitesi adlarına ve linklerine, bonus miktarlarına bakar. Spam gönderenlerin kullandığı hileleri de çözer: harflerin arasına nokta koymak (B.O.N.U.S), harf yerine rakam kullanmak (fr3esp1n), görünmez karakterler veya benzer görünen yabancı harfler.
 >
-> Banka, kargo ve doğrulama kodu mesajlarına dokunmaz. Bankaların bonus kart kampanyaları da normal mesaj olarak kalır.
+> Binlerce gerçek bet ve normal SMS ile eğitilmiş küçük bir yapay zekâ modeli de ikinci bir görüş verir; yeni bet sitesi adlarını ve yazım şekillerini de tanır. Model telefonunda çalışır, hiçbir şey gönderilmez.
+>
+> Banka, kargo ve doğrulama kodu mesajlarına dokunmaz. Bankaların bonus kart kampanyaları ve yasa dışı bahis uyarıları da normal mesaj olarak kalır.
 >
 > GİZLİLİK
 > Her şey telefonunda olur. Filtrenin internet erişimi yoktur ve hiçbir şey kaydedemez. Hesap yok, reklam yok, takip yok. Bir mesajı kendin bildirmedikçe mesajların telefonundan çıkmaz; bildirdiğinde de numaran gönderilmez.
 >
 > ÖZELLİKLER
 > • Kurar kurmaz çalışır, ayar gerektirmez
+> • Telefonda çalışan yapay zekâ ile yeni bet mesajlarını da yakalar
 > • Mesaj dene: bir mesajı yapıştır, filtrenin ne yapacağını ve nedenini gör
 > • Kendi kuralların: her zaman engellenecek ya da asla engellenmeyecek kelime ve numaralar
 > • Üç hassasiyet seviyesi: Rahat, Dengeli, Sıkı
@@ -76,6 +79,8 @@ Karakter sınırları Apple'ın sınırlarıdır; hepsi kontrol edildi.
 > HOW IT WORKS
 > Red Card checks texts from numbers that aren't in your contacts, using Apple's SMS filtering system. It looks for betting words, betting site names and links, and bonus amounts, and sees through the tricks spammers use: dots between letters (B.O.N.U.S), digits instead of letters (fr3esp1n), invisible characters and look-alike letters from other alphabets.
 >
+> A small AI model, trained on thousands of real betting and normal texts, gives a second opinion and recognises new betting site names and wordings too. The model runs on your iPhone; nothing is sent.
+>
 > Bank, delivery and verification-code messages are left alone.
 >
 > PRIVACY
@@ -83,6 +88,7 @@ Karakter sınırları Apple'ın sınırlarıdır; hepsi kontrol edildi.
 >
 > FEATURES
 > • Works as soon as it's switched on
+> • An on-device AI model that also catches new betting texts
 > • Try a message: paste any text and see what the filter would do, and why
 > • Your rules: words and numbers to always or never filter
 > • Three strictness levels: Relaxed, Balanced, Strict
@@ -116,7 +122,7 @@ Kural dosyasını indirmek veri toplama sayılmaz, uygulama o sırada hiçbir ve
 
 > Red Card is an SMS filter (Message Filter Extension). To test it: Settings › Apps › Messages › Unknown & Spam › SMS Filtering › choose Red Card. Then send an SMS from a number that is not in the device's contacts, for example: "Deneme bonusu 500 TL, guncel giris: bit.ly/abc". It is moved to Messages › Filters › Junk.
 > The "Try a message" screen in the app shows the same classification without sending an SMS (tap "Use a sample bet message").
-> The filter runs entirely on the device and has no network access. The only data that leaves the device is a message the user chooses to report from Messages (Report Junk › Red Card): the message text, the kind of sender and the app's own score are sent to https://redcard.batudev.com/api/report. No phone numbers or identifiers are sent.
+> The filter runs entirely on the device and has no network access; a small bundled Core ML text model also runs on the device. The only data that leaves the device is a message the user chooses to report from Messages (Report Junk › Red Card): the message text, the kind of sender and the app's own score are sent to https://redcard.batudev.com/api/report. No phone numbers or identifiers are sent.
 
 Giriş bilgisi gerekmez (uygulamada hesap yok).
 
