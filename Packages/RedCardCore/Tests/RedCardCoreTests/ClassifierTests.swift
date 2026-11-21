@@ -60,6 +60,36 @@ struct ClassifierTests {
         #expect(!verdict.isJunk, "Score \(verdict.score): \(verdict.signals.map(\.detail))")
     }
 
+    // MARK: - Real messages that got through
+
+    @Test("Real bet SMS that avoided every betting word (2026-11-21)")
+    func ronaldoBonusMessage() {
+        let body = "Galatasaray Ronaldoyu aldi B004\n\n\n\n\nRonaldo Kadar Buyuk bir Bns\n7200 lira otomatk tum Uyelere\n\n\nsmsat.vip/rnldgs"
+        let verdict = classifier.classify(body: body, sender: "+84 1992692779")
+        #expect(verdict.isJunk, "Score \(verdict.score): \(verdict.signals.map(\.detail))")
+        // It must also be caught without the sender, on the text alone.
+        #expect(classifier.classify(body: body, sender: nil).isJunk)
+    }
+
+    @Test("Foreign sender + money + odd link is treated as an advert")
+    func promotionPattern() {
+        let verdict = classifier.classify(body: "Sana ozel 5000 TL hediye, hemen al: qwe482.top/x", sender: "+84 1992692779")
+        #expect(verdict.isJunk, "Score \(verdict.score): \(verdict.signals.map(\.detail))")
+        #expect(verdict.signals.contains { $0.kind == .promotionPattern })
+    }
+
+    @Test("The advert pattern never applies to Turkish numbers or companies", arguments: [
+        ("Kardeşim 500 TL attım, dekont burada: bit.ly/dekont1", "+905321234567"),
+        ("Tüm üyelerimize ücretsiz kargo! Kampanya: trendyol.com", "TRENDYOL"),
+        ("Hesabınıza 7.200 TL yatırıldı. Detay: qnb.com.tr", "QNB"),
+        ("Hi, I sent you 50 USD, details: paypal.me/friend", "+14155550123"),
+        ("Ronaldo Galatasaray'a transfer oldu, haberi gördün mü?", "+905321234567")
+    ])
+    func promotionPatternFalsePositives(message: String, sender: String) {
+        let verdict = classifier.classify(body: message, sender: sender)
+        #expect(!verdict.isJunk, "Score \(verdict.score): \(verdict.signals.map(\.detail))")
+    }
+
     @Test("A link alone never filters a message")
     func linkAloneIsNotEnough() {
         let verdict = classifier.classify(body: "Fotoğrafları buraya yükledim: bit.ly/tatil2026", sender: "05321234567")

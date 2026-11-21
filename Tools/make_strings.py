@@ -74,6 +74,7 @@ TR = {
     "Unusual link: %@": "Şüpheli link: %@",
     "Link: %@": "Link: %@",
     "Money or bonus amount “%@”": "Para veya bonus miktarı “%@”",
+    "Advert pattern: foreign sender, money amount and an unusual link": "Reklam kalıbı: yabancı gönderen, para miktarı ve şüpheli link",
     "Sent from a personal mobile number": "Bireysel bir cep numarasından gönderilmiş",
     "Sent from a foreign number": "Yurt dışı numarasından gönderilmiş",
     "Sent from an email address": "Bir e-posta adresinden gönderilmiş",

@@ -31,6 +31,16 @@
         }
       }
     },
+    "Advert pattern: foreign sender, money amount and an unusual link": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reklam kalıbı: yabancı gönderen, para miktarı ve şüpheli link"
+          }
+        }
+      }
+    },
     "Also catches messages with only a few betting signs. A normal message may occasionally end up in Junk.": {
       "localizations": {
         "tr": {

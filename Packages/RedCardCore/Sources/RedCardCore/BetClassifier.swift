@@ -14,6 +14,8 @@ public struct Signal: Sendable, Hashable, Identifiable {
         case unusualLink
         case link
         case moneyAmount
+        /// Foreign or email sender + money amount + unusual link.
+        case promotionPattern
         case personalNumber
         case foreignNumber
         case emailSender
@@ -102,6 +104,17 @@ public struct BetClassifier: Sendable {
         let linkSignals = links.flatMap(linkSignals(for:))
         signals += linkSignals.filter { $0.kind == .gamblingLink }
 
+        // Bet spam that avoids every betting word ("Bns", "7200 lira, tüm
+        // üyelere", odd link) still has a typical shape: a foreign number or
+        // email address, a money amount and an unusual or shortened link.
+        // Only those senders count, so a friend sending "500 TL attım,
+        // dekont: bit.ly/…" from a Turkish number is never caught by this.
+        let amount = firstMoneyAmount(in: text.plain)
+        let hasUnusualLink = linkSignals.contains { [.shortLink, .unusualLink, .chatInvite].contains($0.kind) }
+        if amount != nil, hasUnusualLink, let kind = senderInfo?.kind, kind == .foreignNumber || kind == .email {
+            signals.append(Signal(kind: .promotionPattern, detail: "", points: 25))
+        }
+
         let hasGamblingEvidence = signals.contains { $0.points > 0 }
         guard hasGamblingEvidence else {
             return Verdict(decision: .allow, score: 0, threshold: threshold, signals: [])
@@ -109,7 +122,7 @@ public struct BetClassifier: Sendable {
 
         // 3. Supporting evidence and legitimate context.
         signals += linkSignals.filter { $0.kind != .gamblingLink }
-        if let amount = firstMoneyAmount(in: text.plain) {
+        if let amount {
             signals.append(Signal(kind: .moneyAmount, detail: amount, points: 10))
         }
         if let senderSignal = senderInfo?.signal {

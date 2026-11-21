@@ -7,7 +7,7 @@ extension RuleSet {
     /// They go through the same normalizer as messages, so spelling variants
     /// such as `CEVRIMSIZ`, `Çevrimsiz` or `ç.e.v.r.i.m.s.i.z` all match.
     public static let builtIn = RuleSet(
-        version: 1,
+        version: 2,
         terms: [
             // Bonus offers
             WeightedTerm("deneme bonusu", 60),
@@ -23,6 +23,10 @@ extension RuleSet {
             WeightedTerm("sınırsız bonus", 50),
             WeightedTerm("bonus kodu", 30),
             WeightedTerm("bonus", 15),
+            // Shortened spellings used to dodge filters ("Bns", "Bnus")
+            WeightedTerm("bns", 30),
+            WeightedTerm("bnus", 30),
+            WeightedTerm("bnsu", 30),
             WeightedTerm("çevrimsiz", 45),
             WeightedTerm("çevrim şartı", 40),
             WeightedTerm("çevrim şartsız", 45),
@@ -94,6 +98,11 @@ extension RuleSet {
             WeightedTerm("curacao", 35),
             WeightedTerm("lisanslı", 10),
             WeightedTerm("vip üyelik", 20),
+            // How bet sites address their "members"
+            WeightedTerm("tüm üyelere", 30),
+            WeightedTerm("tüm üyelerimize", 30),
+            WeightedTerm("üyelerimize özel", 30),
+            WeightedTerm("yeni üyelere", 30),
 
             // English
             WeightedTerm("free spins", 50),
@@ -144,7 +153,8 @@ extension RuleSet {
             "click", "link", "cc", "pw", "sbs", "cfd", "bond", "lat", "rest", "monster",
             "cyou", "buzz", "life", "today", "world", "space", "website", "pro", "ws", "to"
         ],
-        gamblingTopLevelDomains: ["bet", "casino", "poker", "games", "bingo"],
+        // .vip and .win are used almost only by betting mirrors in Turkish SMS.
+        gamblingTopLevelDomains: ["bet", "casino", "poker", "games", "bingo", "vip", "win"],
         trustedDomainSuffixes: ["gov.tr", "edu.tr", "bel.tr", "k12.tr", "tsk.tr", "pol.tr", "turkiye.gov.tr"],
         knownTopLevelDomains: [
             "com", "net", "org", "tr", "io", "co", "me", "ly", "gl", "at", "gd", "ee", "id",

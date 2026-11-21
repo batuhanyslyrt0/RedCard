@@ -21,7 +21,9 @@
     "casino",
     "poker",
     "games",
-    "bingo"
+    "bingo",
+    "vip",
+    "win"
   ],
   "knownTopLevelDomains" : [
     "com",
@@ -292,6 +294,18 @@
       "weight" : 15
     },
     {
+      "term" : "bns",
+      "weight" : 30
+    },
+    {
+      "term" : "bnus",
+      "weight" : 30
+    },
+    {
+      "term" : "bnsu",
+      "weight" : 30
+    },
+    {
       "term" : "çevrimsiz",
       "weight" : 45
     },
@@ -544,6 +558,22 @@
       "weight" : 20
     },
     {
+      "term" : "tüm üyelere",
+      "weight" : 30
+    },
+    {
+      "term" : "tüm üyelerimize",
+      "weight" : 30
+    },
+    {
+      "term" : "üyelerimize özel",
+      "weight" : 30
+    },
+    {
+      "term" : "yeni üyelere",
+      "weight" : 30
+    },
+    {
       "term" : "free spins",
       "weight" : 50
     },
@@ -581,5 +611,5 @@
     "pol.tr",
     "turkiye.gov.tr"
   ],
-  "version" : 1
+  "version" : 2
 }
